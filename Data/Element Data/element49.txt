@@ -1,0 +1,1 @@
+﻿"In","Indium",49,13,5,114.8,"Post Transition Metals","d-block","2, 8, 18, 18, 3","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p1","5.786 eV","Solid","2072°C","156.60°C","In-115","1863, Ferdinand Reich, Hieronimus Theodor Richter",""

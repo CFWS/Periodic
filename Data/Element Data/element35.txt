@@ -1,0 +1,1 @@
+﻿"Br","Bromine",35,17,4,79.90,"Non-Metal","p-block","2, 8, 18, 7","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p5","7.434 eV","Liquid","-7.2°C","58.8°C","Se-80","1800s, Carl Lowig",""

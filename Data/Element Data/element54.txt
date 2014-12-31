@@ -1,0 +1,1 @@
+﻿"Xe","Xenon",54,18,5,131.3,"Noble Gas","p-block","2, 8, 18, 18, 8","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6","12.130 eV","Solid","-108.12°C","-111.79°C","Xe-132","1898, Sir William Ramsay",""

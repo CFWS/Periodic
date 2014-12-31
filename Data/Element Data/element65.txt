@@ -1,0 +1,1 @@
+﻿"Tb","Terbium",65,,6,158.9,"Lanthanides","f-block","","1s1 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f9 5s2 5p6  6s2","5.864 eV","Solid","3503 K","1629 K","","Carl Gustaf Mosander, 1843",""

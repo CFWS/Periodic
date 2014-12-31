@@ -1,0 +1,1 @@
+﻿"Pa","Protactinium",91,,7,231.0,"Actinides","f-block","","","5.993 eV","Solid","","1845 K","","1913",""

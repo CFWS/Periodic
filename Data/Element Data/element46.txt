@@ -1,0 +1,1 @@
+﻿"Pd","Palladium",46,10,5,106.4,"Transition Metals","d-block","2, 8, 18, 18","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10","8.337 eV","Solid","2963°C","1554.9°C","Pd-106","1803, William Hyde Wollaston",""

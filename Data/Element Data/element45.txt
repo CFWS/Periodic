@@ -1,0 +1,1 @@
+﻿"Rh","Rhodium",45,9,5,102.9,"Transition Metals","d-block","2, 8, 18, 16, 1","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d8 5s1","7.459 eV","Solid","3695°C","1964°C","Rh-103","1803, William Hyde Wollaston",""

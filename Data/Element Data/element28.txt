@@ -1,0 +1,1 @@
+﻿"Ni","Nickel",28,10,4,58.69,"Transition Metals","d-block","2, 8, 16, 2","1s2 2s2 2p6 3s2 3p6 3d8 4s2","7.640 eV","Solid","2931°C","1455°C","Ni-58","1751, Axel Fredrik Cronstedt",""

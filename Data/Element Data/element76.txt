@@ -1,0 +1,1 @@
+﻿"Os","Osmium",76,8,6,190.2,"Transition Metals","d-block","","1s1 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d6 6s2","8.7 eV","Solid","5285 K","3306 K","","Smithson Tennant in 1803",""

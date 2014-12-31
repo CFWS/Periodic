@@ -1,0 +1,1 @@
+﻿"Pu","Plutonium",94,,7,(244),"Actinides","f-block","","","6.06 eV","Solid","3501 K","913 K","","",""

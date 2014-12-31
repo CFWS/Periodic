@@ -1,0 +1,1 @@
+﻿"Gd","Gadolinium",64,,6,157.3,"Lanthanides","f-block","","1s1 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f8 5s2 5p6  6s2","6.150 eV","Solid","3546 K","1586 K","","Jeans Charles Galissard de Marignac, 1880",""

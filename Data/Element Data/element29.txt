@@ -1,0 +1,1 @@
+﻿"Cu","Copper",29,11,4,63.55,"Transition Metals","d-block","2, 8, 18, 1","1s2 2s2 2p6 3s2 3p6 3d10 4s1","7.726 eV","Solid","2562°C","1084.62°C","Cu-63","Prehistoric",""

@@ -1,0 +1,1 @@
+﻿"Ra","Radium",88,2,7,226,"Alkali Earths Metals","s-block","","","5.17 eV","Solid","1413 K","973 K","","Marie Curie, Pierre Curie, 1898",""

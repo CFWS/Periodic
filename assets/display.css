@@ -1,0 +1,137 @@
+@media screen and (max-width:1000px), screen and (max-height:550px)
+{
+    .elementname, .elementnumber, .elementmass
+    {
+        display:none;
+    }
+	.elementsymbol
+	{
+        margin:0 auto;
+        padding:10px 0;
+	}
+}
+
+@media screen and (max-width:480px)
+{
+	#eleinfo td
+	{
+		display:inline-block;
+	}
+	#eleinfo #sym div
+	{
+		padding:5px;
+	}
+	#pageturn td
+	{
+		display:block;
+		float:none !important;
+		text-align:center !important;
+	}
+	#pageturn #next
+	{
+		float:none;
+	}
+	.element
+	{
+		position:relative;
+		display:inline-block;
+        width:50%;
+		height:auto;
+		padding:0;
+		margin:0;
+		font-size:16px;
+		padding:18px 0;
+	}
+	.elementname
+	{
+        display:block;
+		font-size:1em;
+	}
+	.elementnumber
+	{
+		display:none;
+	}
+	.elementsymbol
+	{
+		display:none;
+	}
+	.elementmass
+	{
+		display:none;
+	}
+	#ptablecontainer
+	{
+		width:100%;
+		height:auto;
+	}
+	footer
+	{
+		width:100%;
+		top:0;
+		margin:1.5em 0;
+		font-size:16px;
+		position:relative;
+	}
+	footer p
+	{
+		display:block;
+		font-size:1.2em;
+		padding:.2em;
+	}
+    footer a
+    {
+        font-size:1em;
+    }
+	footer>#formcontainer
+	{
+		display:none;
+	}
+	#eledes
+	{
+		display:none;
+	}
+	body, html
+	{
+		overflow:auto;
+		overflow-y:auto;
+	}
+	body
+	{
+		overflow-y:auto;
+	}
+	#infocontainer #elementcontent td
+	{
+		padding:2px 10px;
+	}
+	#infocontainer
+	{
+		overflow:auto;
+		min-height:100%;
+		width:100%;
+		position:relative;
+		background-color:black;
+		min-height:100%;
+		font-size:16px;
+		margin-left:0;
+		opacity:0;
+		padding: 20px 0;
+	}
+	#closewindow
+	{
+		display:none;
+	}
+	#elementcontent
+	{
+		padding: 5px 0;
+	}
+	#infocontainer p
+	{
+		padding: 0 20px;
+	}
+	#infocontainer #references {
+		margin: 10px 0;
+	}
+	#weblinks {
+		padding: 2px 0;
+	}
+}

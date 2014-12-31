@@ -1,0 +1,367 @@
+/*General Page Layout*/
+body, a, p, h1, h2, h3, h4, h5, h6, div, footer, img, table, tr, td /*CSS Reset*/
+{
+    margin:0 auto;
+    padding:0;
+}
+@font-face { font-family: 'Hero Light'; src: url('Hero Light.otf') format('opentype'); }
+p {cursor:default;}
+body
+{
+    font-family:'Hero Light', sans-serif;
+    background-color:black;
+    color:white;
+    text-align:center;
+    position:relative;
+}
+a:hover, a:visited, a /*Link Styling*/
+{
+    text-decoration:none;
+    color:inherit;
+}
+#ptablecontainer /*Contains Periodic Table*/
+{
+	-webkit-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+	height:100vh;
+    position:relative;
+}
+#elecontainer
+{
+    overflow:hidden;
+}
+/*End General Page Layout*/
+
+/*Info Page*/
+#closewindow /* Close Button for InfoContainer*/
+{
+	text-align:right;
+	padding:1%;
+	width:20px;
+	color:white;
+	height:4vh;
+	float:right;
+	cursor:pointer;
+	transition-duration:.1s;
+	font-size:1.6em;
+	text-align:center;
+	-moz-transition-duration:.2s;
+	-ms-transition-duration:.2s;
+	-o-transition-duration:.2s;
+	-webkit-transition-duration:.2s;
+	transition-duration:.2s;
+}
+#closewindow:hover
+{
+	color:#b1b1b1;
+}
+#infocontainer
+{
+	overflow:auto;
+	min-height:100%;
+	width:100%;
+	left:0;
+	top:0;
+	z-index:2;
+	position:absolute;
+	background-color:black;
+	/*background-color:transparent;*/
+	min-height:100%;
+	font-size:16px;
+	margin-left:-9999px;
+}
+#elementcontent
+{	
+	padding-top:5vh;
+	padding-bottom:2vh;
+}
+#elementsym
+{
+	font-size:25vmin;
+	cursor:default;
+	text-shadow:3px 3px 20px #fff;
+	text-align:left;
+}
+#infocontainer p
+{
+	padding:0 5vw;
+	text-align:left;
+}
+#infocontainer #references
+{
+	margin:2vh 0;
+}
+#infocontainer #elementcontent td
+{
+	text-align:left;
+	padding:2px;
+	cursor:default;
+	word-wrap:break-word;
+}
+#eleinfo
+{
+	padding-bottom:2vh;
+	word-wrap:break-word;
+}
+#eleinfo #sym div
+{
+	margin:0 auto;
+	padding:10vmin;
+	text-align:center;
+}
+#elementdescription
+{
+	margin-top:3vh;
+}
+#references
+{
+	word-wrap:break-word;
+}
+#weblinks
+{
+	padding:2vh 0;
+}
+#weblinks a
+{
+	padding:1vh 2vw;
+	cursor:pointer;
+	display:inline-block;
+	color:#4188ad;
+}
+#weblinks p
+{
+	display:inline;
+}
+#pageturn
+{
+	width:100%;
+	padding:0vh 5vw;
+}
+#pageturn
+{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+#pageturn a
+{
+	display:inline;
+	cursor:pointer;
+	color:#4188ad;
+	/*text-decoration:underline;*/
+}
+#pageturn #next
+{
+	text-align:right;
+	float:right;
+}
+.hideinfo
+{
+	-webkit-animation:ease animateout 1s;
+    -ms-animation:ease animateout 1s;
+    -o-animation:ease animateout 1s;
+    -moz-animation:ease animateout 1s;
+	animation:ease animatein 1s;
+	margin-left:-9999px;
+}
+.showinfo
+{
+	-webkit-animation:ease animatein 1.2s;
+    -ms-animation:ease animatein 1.2s;
+    -o-animation:ease animatein 1.2s;
+    -moz-animation:ease animatein 1.2s;
+	animation:ease animatein 1.2s;
+	margin-left:0; !important
+}
+
+
+/*http://www.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/*/
+/*Element Styling Start*/
+.element
+{	
+	position:absolute;
+    display:block;
+	padding:10px 3.5px;
+    cursor:pointer; /*The hand cursor*/
+	background-color:rgba(21, 191, 222, 0.25);
+	width:51px;
+	height:48px;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+    -webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.elementname
+{
+    font-size:7px;
+}
+.elementmass
+{
+    font-size:9px;
+}
+.elementsymbol
+{
+    font-size:22px;
+}
+.elementnumber
+{
+    font-size:7px;
+}
+/*Element Styling End*/
+
+/* Horizontal Descriptor Start*/
+#eledes
+{
+	-webkit-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+	
+	bottom:0;
+	width:100%;
+	position:absolute;
+	z-index:1;
+	background-color:black;
+	font-size:16px;
+	height:0;
+	overflow:hidden;
+}
+#eledes>#elementturn
+{
+	color:#4188ad;
+	width:100%;
+	margin:0;
+	padding:2vh 2vh;
+}
+#eledes #eledesinfo
+{
+	padding:2vh 4vw;
+	font-size:2vmin;
+}
+#eledes a
+{
+	cursor:pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+/* Horizontal Descriptor End*/
+
+footer /*Footer*/
+{
+	position:absolute;
+	top:3vh;
+	width:100%;
+    text-align:center;
+	pointer-events:all;
+	z-index:1;
+}
+footer>#info
+{
+	cursor:pointer;
+	pointer-events:all;
+}
+footer p, footer a /* Footer Text */
+{
+	display:inline-block;
+    font-size:2vmin;
+	margin:0vw 2vw;
+}
+
+footer>#formcontainer
+{
+	display:block;
+	height:0;
+	margin-top:1.2vh;
+}
+footer>#formcontainer>div
+{
+	pointer-events:all;
+	display:inline-block;
+	cursor:pointer;
+	font-size:1.6vmin;
+	height:5vh;
+	width:15%;
+	background-repeat:no-repeat;
+	background-position:1vmin center;
+    background-size:3vmin;
+	line-height:5vh;
+	margin: 0 .5vw;
+
+	transition-duration:.1s;
+	-moz-transition-duration:.1s;
+	-webkit-transition-duration:.1s;
+	-ms-transition-duration:.1s;
+	-o-transition-duration:.1s;
+}
+footer>#formcontainer>div:hover
+{
+	color:#4188ad;
+}
+footer>#formcontainer>#tableform
+{
+	background-image: url('../img/Table.png');
+}
+footer>#formcontainer>#movingform
+{
+	background-image: url('../img/Moving.png');
+}
+footer>#formcontainer>#horizontalform
+{
+	background-image: url('../img/Horizontal.png');
+}
+
+/*Top Options End*/
+.alkali
+{
+    background-color:rgba(255,50,50,0.25);
+}
+.alkaliearth
+{
+    background-color:rgba(255,127,50,0.25);
+}
+.nobelgas
+{
+    background-color:rgba(255,70,255,0.25);
+}
+.halogens
+{
+    background-color:rgba(160,70,255,0.25);
+}
+.nonmetals
+{
+    background-color:rgba(80, 80, 255, 0.25);
+}
+.metalloids
+{
+    background-color:rgba(0, 255, 255, 0.25);
+}
+.transitionmetal
+{
+    background-color:rgba(255, 255, 70, 0.25);
+}
+.posttransition
+{
+    background-color:rgba(80, 255, 80, 0.25);
+}
+.lanthanides
+{
+    background-color:rgba(255, 210, 55, 0.25);
+}
+.actinides
+{
+    background-color:rgba(170, 255, 55, 0.25);
+}

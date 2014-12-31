@@ -1,0 +1,1 @@
+﻿"Ho","Holmium",67,,6,164.9,"Lanthanides","f-block","","1s1 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f11 5s2 5p6  6s2","6.022 eV","Solid","2973 K","1747 K","","Per Theodor Cleve, 1879",""

@@ -1,0 +1,51 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow" Height="403" Width="620" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Background="#FFF0F0F0">
+    <Grid>
+        <Label Content="Electron SubShell Config" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,185,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Element Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+
+        <Label Content="Electron Shell Config" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,160,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Element Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="315,10,0,0" Height="20" Width="289" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Location" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,135,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Classification" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,110,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Group/Period" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,85,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Mass Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Atomic Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,35,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Ionisation" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,210,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="State at Room Temperature" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,235,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Boiling Point" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,260,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Melting Point" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,285,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Isotopes" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,335,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <Label Content="Discovery" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,310,0,0" Height="20" Width="140" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
+        <ComboBox x:Name="elename" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top" Width="100" Height="20" Padding="4,0" VerticalContentAlignment="Center" BorderThickness="0" Background="White" BorderBrush="#FFE0E0E0"/>
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="20" Margin="260,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="elenum" HorizontalAlignment="Left" Height="20" Margin="155,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="elemass" HorizontalAlignment="Left" Height="20" Margin="155,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBox SpellCheck.IsEnabled="True" x:Name="eledescription" HorizontalAlignment="Left" Height="195" Margin="315,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289"/>
+
+        <ComboBox x:Name="elegroup" HorizontalAlignment="Left" Margin="155,85,0,0" VerticalAlignment="Top" Width="72" Height="20" Padding="4,0" Text="1" VerticalContentAlignment="Center" BorderThickness="0" Background="White" BorderBrush="#FFE0E0E0"/>
+        <ComboBox x:Name="eleperiod" HorizontalAlignment="Left" Margin="238,85,0,0" VerticalAlignment="Top" Width="72" Height="20" Padding="4,0" Text="1" VerticalContentAlignment="Center" BorderThickness="0" Background="White" BorderBrush="#FFE0E0E0"/>
+
+        <ComboBox x:Name="eleclass" HorizontalAlignment="Left" Margin="155,110,0,0" VerticalAlignment="Top" Width="155" Height="20" Padding="4,0" Text="1" VerticalContentAlignment="Center" Background="White" BorderThickness="1,1,1,0" BorderBrush="#FFE0E0E0"/>
+        <ComboBox x:Name="elelocation" HorizontalAlignment="Left" Margin="155,135,0,0" VerticalAlignment="Top" Width="155" Height="20" Padding="4,0" Text="1" VerticalContentAlignment="Center" BorderThickness="0" Background="White" BorderBrush="#FFE0E0E0"/>
+
+        <TextBox x:Name="eleshellconfig" HorizontalAlignment="Left" Height="20" Margin="155,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="elesubshellconfig" HorizontalAlignment="Left" Height="20" Margin="155,185,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="eleion" HorizontalAlignment="Left" Height="20" Margin="155,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+
+        <ComboBox x:Name="elestate" HorizontalAlignment="Left" Margin="155,235,0,0" VerticalAlignment="Top" Width="155" Height="20" Padding="4,0" Text="1" VerticalContentAlignment="Center" BorderThickness="0" Background="White" BorderBrush="#FFE0E0E0"/>
+
+
+        <TextBox x:Name="eleboil" HorizontalAlignment="Left" Height="20" Margin="155,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="elemelt" HorizontalAlignment="Left" Height="20" Margin="155,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="elediscovery" HorizontalAlignment="Left" Height="20" Margin="155,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="eleisotope" HorizontalAlignment="Left" Height="20" Margin="155,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+
+        <TextBox x:Name="txtOutput" HorizontalAlignment="Left" Height="91" Margin="315,239,0,0" TextWrapping="Wrap" Text="Output&#xA;&#xA;Please do not put any enters into the description. " VerticalAlignment="Top" Width="289" IsEnabled="False"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="461,335,0,0" VerticalAlignment="Top" Width="143"/>
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="315,335,0,0" VerticalAlignment="Top" Width="141"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,1 @@
+﻿"Np","Neptunium",93,,7,(237),"Actinides","f-block","","","6.266 eV","Solid","4175 K","917 K","Np-237","Edwin M. McMillian and Philip H. Abelson, 1940",""

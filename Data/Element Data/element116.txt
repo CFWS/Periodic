@@ -1,0 +1,1 @@
+﻿"Lv","Livermorium",116,16,7,,"Post Transition Metals","p-block","","","","Solid","","","","Artificial","Unconfirmed Element"

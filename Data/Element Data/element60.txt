@@ -1,0 +1,1 @@
+﻿"Nd","Neodymium",60, ,6,144.2,"Lanthanides","f-block","2, 8, 18, 22, 8, 2","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f4 5s2 5p6 6s2","5.525 eV","Solid","3074°C","1021°C","Nd-142","1885, Carl F. Auer con Welsbach",""

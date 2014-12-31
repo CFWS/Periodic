@@ -1,0 +1,1 @@
+﻿"Y","Yttrium",39,3,5,88.91,"Transition Metals","d-block","2, 8, 18, 9, 2","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d1 5s2","6.217 eV","Solid","3345°C","1522°C","Y-89","1789, Johan Gadolin",""

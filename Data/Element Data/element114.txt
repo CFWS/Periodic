@@ -1,0 +1,1 @@
+﻿"Fl","Flerovium",114,14,7,,"Post Transition Metals","p-block","","","","Solid","","","","Artificial","Unconfirmed Element"

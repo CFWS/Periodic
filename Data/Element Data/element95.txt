@@ -1,0 +1,1 @@
+﻿"Am","Americium",95,,7,(243),"Actinides","f-block","","","5.993 eV","Solid","2284 K","1449 K","","",""

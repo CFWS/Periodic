@@ -1,0 +1,1 @@
+﻿"Rf","Rutherfordium",104,4,7,,"Transition Metals","d-block","","","","Solid","","","Artificial","","Unconfirmed Element"

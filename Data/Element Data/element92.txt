@@ -1,0 +1,1 @@
+﻿"U","Uranium",92,,7,238.0,"Actinides","f-block","","","6.194 eV","Solid","4404 K","1408 K","U-235, U-238","Martin Heinrich Klaproth, 1989","The element that is used in fission power plants and nuclear bombs, Uranium is highly radioactive. "

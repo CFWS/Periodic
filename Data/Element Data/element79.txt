@@ -1,0 +1,1 @@
+﻿"Au","Gold",79,11,6,197.0,"Transition Metals","d-block","","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s1","9.226 eV","Solid","3129 K","1337.33 K","Au-197","Ancient",""

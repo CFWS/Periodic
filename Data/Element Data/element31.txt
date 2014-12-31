@@ -1,0 +1,1 @@
+﻿"Ga","Gallium",31,13,4,69.72,"Post Transition Metals","p-block","2, 8, 18, 3","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p1","5.999 eV","Solid","2204°C","29.76°C","Ga-69","1875, Paul-Emile Lecoq de Boisbaudran",""

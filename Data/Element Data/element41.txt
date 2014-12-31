@@ -1,0 +1,1 @@
+﻿"Nb","Niobium",41,5,5,92.91,"Transition Metals","d-block","2, 8, 18, 12, 1","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d4 5s1","6.759 eV","Solid","4744°C","2477°C","Nb-93","1801, Charles Hatchett",""
