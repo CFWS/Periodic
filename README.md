@@ -1,23 +1,16 @@
-﻿##Periodic
-
--------------------
-
+##Periodic
 
 Periodic is an elegant, minimalistic periodic table aimed at mid-level chemistry students. Weaved with JavaScript, HTML5 and CSS3, it represents an intuitive, feature rich companion to highschool-level chemistry courses.
 
 
-__________
 # License
-__________
 
 
 The project is licensed under GNU GPL V3. 
 
 
-_______________
 # Contribution
 
-_______________
 
 Please report bugs and send feedback to coldflamestudios@gmail.com
 
@@ -31,10 +24,8 @@ In the 'Data/Element Data' Folder you will find Elements.exe, which you can run 
 Thank You!
 
 
-___________
 # Features
 
-___________
 
 - Multi-Browser Support (Up to Date Major Browsers)
 
@@ -42,9 +33,7 @@ ___________
 Responsive Design
 
 
-___________
 # Licenses
-___________
 
 
 - Move.JS - MIT
