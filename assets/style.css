@@ -6,6 +6,10 @@ body, a, p, h1, h2, h3, h4, h5, h6, div, footer, img, table, tr, td /*CSS Reset*
 }
 @font-face { font-family: 'Hero Light'; src: url('Hero Light.otf') format('opentype'); }
 p {cursor:default;}
+html
+{
+    overflow:hidden;
+}
 body
 {
     font-family:'Hero Light', sans-serif;
