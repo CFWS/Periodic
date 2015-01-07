@@ -13,7 +13,7 @@
 
 @media screen and (max-width:480px)
 {
-	#eleinfo td
+    #eleinfo td
 	{
 		display:inline-block;
 	}
@@ -34,8 +34,8 @@
 	.element
 	{
 		position:relative;
-		display:inline-block;
-        width:100%;
+		display:block;
+		width:100%;
 		height:auto;
 		padding:0;
 		margin:0;
@@ -44,8 +44,8 @@
 	}
 	.elementname
 	{
+		font-size:16px;
         display:block;
-		font-size:1em;
 	}
 	.elementnumber
 	{
@@ -76,7 +76,7 @@
 	{
 		display:block;
 		font-size:1.2em;
-		padding:.2em;
+		padding:.3em;
 	}
     footer a
     {
@@ -132,6 +132,11 @@
 		margin: 10px 0;
 	}
 	#weblinks {
-		padding: 2px 0;
+		padding: 0px 0;
 	}
+    #weblinks a, #weblinks p{
+        text-align:center;
+        display:block;
+        padding:.3em 0;
+    }
 }

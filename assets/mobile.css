@@ -20,7 +20,7 @@
 	.element
 	{
 		position:relative;
-		display:inline-block;
+		display:block;
 		width:100%;
 		height:auto;
 		padding:0;
@@ -30,7 +30,8 @@
 	}
 	.elementname
 	{
-		font-size:1em;
+		font-size:16px;
+        display:block;
 	}
 	.elementnumber
 	{
@@ -61,8 +62,12 @@
 	{
 		display:block;
 		font-size:1.2em;
-		padding:.2em;
+		padding:.3em;
 	}
+    footer a
+    {
+        font-size:1em;
+    }
 	footer>#formcontainer
 	{
 		display:none;
@@ -113,5 +118,10 @@
 		margin: 10px 0;
 	}
 	#weblinks {
-		padding: 2px 0;
+		padding: 0px 0;
 	}
+    #weblinks a, #weblinks p{
+        text-align:center;
+        display:block;
+        padding:.3em 0;
+    }
