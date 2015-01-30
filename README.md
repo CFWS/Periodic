@@ -37,7 +37,7 @@ Responsive Design
 
 
 - Move.JS - MIT
-HERO Light - FFF EULA Version 1.0, July 2009
+- HERO Light - FFF EULA Version 1.0, July 2009
 
 
 [Website](http://cfws.github.io/Periodic/)
