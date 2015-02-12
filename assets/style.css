@@ -32,6 +32,15 @@ a:hover, a:visited, a /*Link Styling*/
 	transform-style:preserve-3d;
 	height:100vh;
     position:relative;
+
+    opacity:0;
+    
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    -o-animation-fill-mode:forwards;
+    -ms-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
 }
 #elecontainer
 {
@@ -368,4 +377,30 @@ footer>#formcontainer>#horizontalform
 .actinides
 {
     background-color:rgba(170, 255, 55, 0.25);
+}
+
+@keyframes fadeinelement /*Fades in Page*/
+{
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-webkit-keyframes fadeinelement
+{
+    from {opacity:0;}
+    to {opacity:1;}
+}	
+@-ms-keyframes fadeinelement
+{
+    from {opacity:0;}
+    to {opacity:1;}
+}	
+@-o-keyframes fadeinelement
+{
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-moz-keyframes fadeinelement
+{
+    from {opacity:0;}
+    to {opacity:1;}
 }
