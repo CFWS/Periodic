@@ -6,10 +6,6 @@ body, a, p, h1, h2, h3, h4, h5, h6, div, footer, img, table, tr, td /*CSS Reset*
 }
 @font-face { font-family: 'Hero Light'; src: url('Hero Light.otf') format('opentype'); }
 p {cursor:default;}
-html
-{
-    overflow:hidden;
-}
 body
 {
     font-family:'Hero Light', sans-serif;
@@ -73,7 +69,7 @@ a:hover, a:visited, a /*Link Styling*/
 }
 #infocontainer
 {
-	overflow:auto;
+	overflow:scroll;
 	min-height:100%;
 	width:100%;
 	left:0;
@@ -282,7 +278,7 @@ footer /*Footer*/
 	pointer-events:all;
 	z-index:1;
 }
-footer>#info
+footer>#info,footer>#github
 {
 	cursor:pointer;
 	pointer-events:all;
