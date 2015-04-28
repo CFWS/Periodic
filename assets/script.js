@@ -408,7 +408,7 @@ function JScale() //For Scaling of Table
             screenaspect = screenscaleh;
         }
 
-        screenaspect = Math.round(screenaspect * 100) / 100
+        screenaspect = Math.round(screenaspect * 100) / 100;
 
         var changescale = document.getElementById('ptablecontainer');
 
