@@ -10,7 +10,7 @@ var hviewactivated = false;
 var scalefinish = false;
 
 var smallsite = false;
-mobilesite = false;
+var mobilesite = false;
 
 var EleNum;
 var TimerMove;
@@ -18,11 +18,10 @@ var TimerMove;
 var CurrentHElement = 1;
 
 function periodictable(animatetime, type) {
-
     if (type === 1) { //Horizontal
         horizontalchange(1, true);
         move(document.getElementById('eledes')) // Bottom Panel
-        .setProperty('height', '25vh')
+            .setProperty('height', '25vh')
             .setProperty('opacity', '1')
             .duration('2s')
             .ease('in-out')
@@ -234,7 +233,7 @@ function horizontalchange(elenum, first) //HView Change(Move) Element
         locy = 100;
 
         if (i + 1 == elenum) {
-            locx = 0;
+            //locx = 0;
             locy = -100;
             scalex = 3;
             scaley = 3;
