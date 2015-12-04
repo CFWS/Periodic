@@ -12,13 +12,10 @@ The project is licensed under GNU GPL V3.
 # Contribution
 
 
-Please report bugs and send feedback to coldflamestudios@gmail.com
+You may contribute to this project by creating new pull requests and opening new issues. 
 
 
-You may contribute to this project by creating new pull requests. 
-
-
-In the 'Data/Element Data' Folder you will find Elements.exe, which you can run on a Windows computer to make edits to the database files. 
+Alternatively, in the 'Data/Element Data' Folder you will find Elements.exe, which you can run on a Windows computer to make edits to the database files. 
 
 
 Thank You!
@@ -30,7 +27,8 @@ Thank You!
 - Multi-Browser Support (Up to Date Major Browsers)
 
 - Mobile Support
-Responsive Design
+
+- Responsive Design
 
 
 # Licenses
