@@ -31,12 +31,13 @@ a:hover, a:visited, a /*Link Styling*/
 
     opacity:0;
     
+    transition-duration:0.5s;
+    
     -webkit-animation-fill-mode:forwards;
     -moz-animation-fill-mode:forwards;
     -o-animation-fill-mode:forwards;
     -ms-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
-
 }
 #elecontainer
 {
@@ -77,10 +78,14 @@ a:hover, a:visited, a /*Link Styling*/
 	z-index:2;
 	position:absolute;
 	background-color:black;
-	/*background-color:transparent;*/
 	min-height:100%;
 	font-size:16px;
 	margin-left:-9999px;
+	-moz-transition-duration:.5s;
+	-ms-transition-duration:.5s;
+	-o-transition-duration:.5s;
+	-webkit-transition-duration:.5s;
+	transition-duration:.5s;
 }
 #elementcontent
 {	
@@ -169,24 +174,6 @@ a:hover, a:visited, a /*Link Styling*/
 	text-align:right;
 	float:right;
 }
-.hideinfo
-{
-	-webkit-animation:ease animateout 1s;
-    -ms-animation:ease animateout 1s;
-    -o-animation:ease animateout 1s;
-    -moz-animation:ease animateout 1s;
-	animation:ease animatein 1s;
-	margin-left:-9999px;
-}
-.showinfo
-{
-	-webkit-animation:ease animatein 1.2s;
-    -ms-animation:ease animatein 1.2s;
-    -o-animation:ease animatein 1.2s;
-    -moz-animation:ease animatein 1.2s;
-	animation:ease animatein 1.2s;
-	margin-left:0;
-}
 
 
 /*http://www.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/*/
@@ -210,6 +197,11 @@ a:hover, a:visited, a /*Link Styling*/
 	-o-user-select:none;
 	-ms-user-select:none;
 	user-select:none;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 .elementname
 {
@@ -375,7 +367,7 @@ footer>#formcontainer>#horizontalform
     background-color:rgba(170, 255, 55, 0.25);
 }
 
-@keyframes fadeinelement /*Fades in Page*/
+@keyframes fadeinelement /*Fades in*/
 {
     from {opacity:0;}
     to {opacity:1;}
@@ -385,18 +377,84 @@ footer>#formcontainer>#horizontalform
     from {opacity:0;}
     to {opacity:1;}
 }	
-@-ms-keyframes fadeinelement
-{
-    from {opacity:0;}
-    to {opacity:1;}
-}	
-@-o-keyframes fadeinelement
-{
-    from {opacity:0;}
-    to {opacity:1;}
-}
 @-moz-keyframes fadeinelement
 {
     from {opacity:0;}
     to {opacity:1;}
+}
+@keyframes fadeoutelement /*Fades out*/
+{
+    from {opacity:1;}
+    to {opacity:0;}
+}
+@-webkit-keyframes fadeoutelement
+{
+    from {opacity:1;}
+    to {opacity:0;}
+}	
+@-moz-keyframes fadeoutelement
+{
+    from {opacity:1;}
+    to {opacity:0;}
+}
+.hide
+{
+	-webkit-animation:ease fadeoutelement 1.2s;
+    -moz-animation:ease fadeoutelement 1.2s;
+	animation:ease fadeoutelement 1.2s;
+}
+.show
+{
+	-webkit-animation:ease fadeinelement 1.2s;
+    -moz-animation:ease fadeinelement 1.2s;
+	animation:ease fadeinelement 1.2s;
+}
+
+@keyframes fadeinbottompane /*Fades in*/
+{
+    from {opacity:0; height:0px; }
+    to {opacity:1; height:25vh;}
+}
+@-webkit-keyframes fadeinbottompane
+{
+    from {opacity:0; height:0px; }
+    to {opacity:1; height:25vh;}
+}	
+@-moz-keyframes fadeinbottompane
+{
+    from {opacity:0; height:0px; }
+    to {opacity:1; height:25vh;}
+}
+@keyframes fadeoutbottompane /*Fades out*/
+{
+    from {opacity:1; height:25vh;}
+    to {opacity:0; height:0px;}
+}
+@-webkit-keyframes fadeoutbottompane
+{
+    from {opacity:1; height:25vh;}
+    to {opacity:0; height:0px;}
+}	
+@-moz-keyframes fadeoutbottompane
+{
+    from {opacity:1; height:25vh;}
+    to {opacity:0; height:0px;}
+}
+.hidebottompane
+{
+    -webkit-animation:ease fadeoutbottompane 2s;
+    -moz-animation:ease fadeoutbottompane 2s;
+	animation:ease fadeoutbottompane 2s;
+}
+.showbottompane
+{
+    -webkit-animation:ease fadeinbottompane 2s;
+    -moz-animation:ease fadeinbottompane 2s;
+	animation:ease fadeinbottompane 2s;
+
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    -o-animation-fill-mode:forwards;
+    -ms-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
 }
