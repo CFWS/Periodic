@@ -34,8 +34,7 @@ Thank You!
 # Licenses
 
 
-- Move.JS - MIT
-- HERO Light - FFF EULA Version 1.0, July 2009
+- [HERO Light - EULA Free Font License Ver. 2.0](https://github.com/CFWS/Periodic/blob/gh-pages/assets/EULA%20Free%20Font%20License%20Ver.%202.0.pdf)
 
 
 [Website](http://cfws.github.io/Periodic/)
