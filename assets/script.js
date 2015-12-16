@@ -17,6 +17,26 @@ var TimerMove;
 var CurrentHElement = 1;
 
 var ElementPosition = new Array(118);
+var showTable = 0;
+
+
+function changeperspective(toggle)
+{
+    var totalclassName = "";
+    if (showTable === true)
+        {
+            totalclassName += "show";
+        }
+    else if (showTable === false)
+        {
+            totalclassName += "hide";
+        }
+    if (toggle === 1)
+        {
+            totalclassName += " perspective";
+        }
+    document.getElementById('ptablecontainer').className = totalclassName;
+}
 
 function periodictable(animatetime, type) {
     if (type === 1) { //Horizontal
@@ -45,10 +65,8 @@ function periodictable(animatetime, type) {
             
             elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
             elements[i].style.transitionDuration = animatetime;
-        } else if (type == 0.25) {
-            
+        } else if (type == 0.25) { 
             var r  = Math.floor((Math.random() * 3) + 1);     
-            console.log(r);
             if (r == 1)
                 {
                     locx = (Math.floor(Math.random() * screenwidth - screenwidth / 2));
@@ -69,7 +87,6 @@ function periodictable(animatetime, type) {
             
             elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
             elements[i].style.transitionDuration = animatetime;
-
         } else if (type == 0.5) { //Init Form - Elements Fly In
             locx = (Math.floor(Math.random() * 9999 - 9999 / 2));
             locy = (Math.floor(Math.random() * 9999 - 9999 / 2));
@@ -96,9 +113,13 @@ function periodictable(animatetime, type) {
         }
     }
     if (type === 0.25 || type === 0) {
+        changeperspective(1);
         TimerMove = setInterval(function () { //Activate 5s Timer
             periodictable("5s", 0.25);
         }, 5000);
+    }
+    if (type === 0.5) {
+        changeperspective(1);
     }
 }
 
@@ -118,6 +139,7 @@ function elementpage(elementnum) { //Info Page
     } else //Activate/Show Info Page
     {
         document.getElementById('ptablecontainer').className = "hide";
+        showTable = false;
         document.getElementById('infocontainer').style.marginLeft = '0px';
     }
     infopageactivated = true;
@@ -174,6 +196,7 @@ function exitinfopage() //Exit Info Page
         document.getElementById('infocontainer').style.marginLeft = '-9999px';
         infopageactivated = false;
         document.getElementById('ptablecontainer').className = "show";
+        showTable = true;
     }
 }
 
@@ -259,16 +282,31 @@ function horizontalchange(elenum, first) { //HView Change(Move) Element
     }
 }
 
+function switchoffperspective()
+{
+    changeperspective(0);
+}
+function switchonperspective()
+{
+    changeperspective(1);
+}
+
+var perspective;
+
 function formbtnclick() //Clicking, Clicking, Lots of Clicking
 {
     document.getElementById('tableform').onclick = function () {
         periodictable("3s", 2);
+        perspective = setTimeout(switchoffperspective, 5000);
     };
     document.getElementById('movingform').onclick = function () {
-        periodictable("5s", 0);
+        clearTimeout(perspective);
+        switchonperspective();
+        perspective = periodictable("5s", 0);
     };
     document.getElementById('horizontalform').onclick = function () {
         periodictable("3s", 1);
+        perspective = setTimeout(switchoffperspective, 5000);
     };
     document.getElementById('closewindow').onclick = function () {
         exitinfopage();
@@ -326,6 +364,7 @@ document.onreadystatechange = function () {
         if ((smallsite === false) && (mobilesite === false)) { //Animate in if not Small/Mobile
             periodictable("0s", 0.5);
             setTimeout(initTable, 0);
+            perspective = setTimeout(switchoffperspective, 5000);
         }
     }
 };
@@ -356,6 +395,7 @@ function JScale() //For Scaling of Table
             smallsite = true;
             // Reset Transforms
             document.getElementById('ptablecontainer').removeAttribute('style');
+            showTable = true;
 
             for (i = 0; i < element.length; i++) {
                 element[i].removeAttribute('style');
@@ -405,6 +445,7 @@ function JScale() //For Scaling of Table
         }
 
         document.getElementById('ptablecontainer').className = "show";
+        showTable = true;
     }
 }
 window.onkeydown = function (e) {

@@ -38,9 +38,12 @@ a:hover, a:visited, a /*Link Styling*/
     -o-animation-fill-mode:forwards;
     -ms-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
-    
+}
+.perspective
+{
     -webkit-perspective: 500px;
-
+    -moz-perspective: 500px;
+    perspective: 500px;
 }
 #elecontainer
 {
