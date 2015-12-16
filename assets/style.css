@@ -38,6 +38,9 @@ a:hover, a:visited, a /*Link Styling*/
     -o-animation-fill-mode:forwards;
     -ms-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
+    
+    -webkit-perspective: 500px;
+
 }
 #elecontainer
 {
@@ -202,6 +205,8 @@ a:hover, a:visited, a /*Link Styling*/
     -ms-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 .elementname
 {

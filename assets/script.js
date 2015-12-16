@@ -8,7 +8,6 @@ var infopageactivated = false;
 var hviewactivated = false;
 
 var scalefinish = false;
-
 var smallsite = false;
 var mobilesite = false;
 
@@ -17,11 +16,12 @@ var TimerMove;
 
 var CurrentHElement = 1;
 
+var ElementPosition = new Array(118);
+
 function periodictable(animatetime, type) {
     if (type === 1) { //Horizontal
         horizontalchange(1, true);
         document.getElementById('eledes').className = "showbottompane";
-
     } else {
         if (hviewactivated === true) { // Deactivate Bottom Panel
             document.getElementById('eledes').className = "hidebottompane";
@@ -29,9 +29,10 @@ function periodictable(animatetime, type) {
         }
     }
 
+    window.clearInterval(TimerMove);
+
     var elements = document.querySelectorAll(".element");
     var locx, locy, locz; 
-    window.clearInterval(TimerMove);
 
     for (var i = 0; i < elements.length; i++) {
         if (type === 0) { //Random - Random X,Y,Z Values
@@ -39,9 +40,36 @@ function periodictable(animatetime, type) {
             locx = (Math.floor(Math.random() * screenwidth - screenwidth / 2));
             locy = (Math.floor(Math.random() * screenheight - screenheight / 2));
             locz = (Math.floor(Math.random() * screenheight * 2 - screenheight / 2 * 2));
-
+            
+            ElementPosition[i][0] = locx; ElementPosition[i][1] = locy; ElementPosition[i][2] = locz;
+            
             elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
             elements[i].style.transitionDuration = animatetime;
+        } else if (type == 0.25) {
+            
+            var r  = Math.floor((Math.random() * 3) + 1);     
+            console.log(r);
+            if (r == 1)
+                {
+                    locx = (Math.floor(Math.random() * screenwidth - screenwidth / 2));
+                    locy = ElementPosition[i][1]; locz = ElementPosition[i][2];
+                }
+            else if (r == 2)
+                {
+                    locy = (Math.floor(Math.random() * screenheight - screenheight / 2));
+                    locx = ElementPosition[i][0]; locz = ElementPosition[i][2];
+                }
+            else if (r == 3)
+                {
+                    locz = (Math.floor(Math.random() * screenheight * 2 - screenheight / 2 * 2));
+                    locy = ElementPosition[i][1]; locx = ElementPosition[i][0];
+                }
+            
+            ElementPosition[i][0] = locx; ElementPosition[i][1] = locy; ElementPosition[i][2] = locz;
+            
+            elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
+            elements[i].style.transitionDuration = animatetime;
+
         } else if (type == 0.5) { //Init Form - Elements Fly In
             locx = (Math.floor(Math.random() * 9999 - 9999 / 2));
             locy = (Math.floor(Math.random() * 9999 - 9999 / 2));
@@ -67,9 +95,9 @@ function periodictable(animatetime, type) {
             elements[i].style.transitionDuration = animatetime;
         }
     }
-    if (type === 0) {
+    if (type === 0.25 || type === 0) {
         TimerMove = setInterval(function () { //Activate 5s Timer
-            periodictable("5s", 0);
+            periodictable("5s", 0.25);
         }, 5000);
     }
 }
@@ -271,6 +299,12 @@ function clickElement(ele, index) {
 
 document.onreadystatechange = function () {
     if (document.readyState == "complete") { //Wait for DOM
+        
+        for (var i = 0; i <= ElementPosition.length - 1; i++)
+        {
+            ElementPosition[i] = new Array(3);
+        }
+        
         if (navigator.userAgent.match(/iPhone/i) || (navigator.userAgent.match(/iPod/i))) { //Activate Mobile View on Device Detection
             mobilesite = true;
             var style = document.createElement('link');
