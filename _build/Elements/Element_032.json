@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Ge",
+  "Atomic Number": 32,
+  "Name": "Germanium",
+  "Mass": "72.63",
+  "Group": 14,
+  "Period": 4,
+  "Classification": "Metalloids",
+  "Location": "p-block",
+  "Electron shell configuration": "2, 8, 18, 4",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p2",
+  "Ionisation energy": "7.900 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "2833°C",
+  "Melting Point": "938.25°C",
+  "Isotopes": "Ge-73, Ge-74",
+  "Discovered": "1886, Clemens Winkler ",
+  "Element Description": ""
+}

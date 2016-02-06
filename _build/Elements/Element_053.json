@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "I",
+  "Atomic Number": 53,
+  "Name": "Iodine",
+  "Mass": "126.9",
+  "Group": 17,
+  "Period": 5,
+  "Classification": "Halogens",
+  "Location": "p-block",
+  "Electron shell configuration": "2, 8, 18, 18, 7",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p5",
+  "Ionisation energy": "10.451 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "184.4°C",
+  "Melting Point": "113.7°C",
+  "Isotopes": "I-127",
+  "Discovered": "1811, Barnard Courtois",
+  "Element Description": ""
+}

@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Ag",
+  "Atomic Number": 47,
+  "Name": "Silver",
+  "Mass": "107.9",
+  "Group": 11,
+  "Period": 5,
+  "Classification": "Transition Metals",
+  "Location": "d-block",
+  "Electron shell configuration": "2, 8, 18, 18, 1",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s1",
+  "Ionisation energy": "7.576 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "2162°C",
+  "Melting Point": "961.78°C",
+  "Isotopes": "Ag-107",
+  "Discovered": "Prehistoric",
+  "Element Description": ""
+}

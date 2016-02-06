@@ -30,7 +30,6 @@ a:hover, a:visited, a /*Link Styling*/
     position:relative;
 
     opacity:0;
-    
     transition-duration:0.5s;
     
     -webkit-animation-fill-mode:forwards;
@@ -342,7 +341,7 @@ footer>#formcontainer>#horizontalform
 {
     background-color:rgba(255,127,50,0.25);
 }
-.nobelgas
+.noblegas
 {
     background-color:rgba(255,70,255,0.25);
 }
@@ -407,15 +406,15 @@ footer>#formcontainer>#horizontalform
 }
 .hide
 {
-	-webkit-animation:ease fadeoutelement 1.2s;
+    -webkit-animation:ease fadeoutelement 1.2s;
     -moz-animation:ease fadeoutelement 1.2s;
-	animation:ease fadeoutelement 1.2s;
+    animation:ease fadeoutelement 1.2s;
 }
 .show
 {
-	-webkit-animation:ease fadeinelement 1.2s;
+    -webkit-animation:ease fadeinelement 1.2s;
     -moz-animation:ease fadeinelement 1.2s;
-	animation:ease fadeinelement 1.2s;
+    animation:ease fadeinelement 1.2s;
 }
 
 @keyframes fadeinbottompane /*Fades in*/
@@ -452,13 +451,13 @@ footer>#formcontainer>#horizontalform
 {
     -webkit-animation:ease fadeoutbottompane 2s;
     -moz-animation:ease fadeoutbottompane 2s;
-	animation:ease fadeoutbottompane 2s;
+    animation:ease fadeoutbottompane 2s;
 }
 .showbottompane
 {
     -webkit-animation:ease fadeinbottompane 2s;
     -moz-animation:ease fadeinbottompane 2s;
-	animation:ease fadeinbottompane 2s;
+    animation:ease fadeinbottompane 2s;
 
     -webkit-animation-fill-mode:forwards;
     -moz-animation-fill-mode:forwards;

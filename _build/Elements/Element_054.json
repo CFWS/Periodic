@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Xe",
+  "Atomic Number": 54,
+  "Name": "Xenon",
+  "Mass": "131.3",
+  "Group": 18,
+  "Period": 5,
+  "Classification": "Noble Gas",
+  "Location": "p-block",
+  "Electron shell configuration": "2, 8, 18, 18, 8",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6",
+  "Ionisation energy": "12.130 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "-108.12°C",
+  "Melting Point": "-111.79°C",
+  "Isotopes": "Xe-132",
+  "Discovered": "1898, Sir William Ramsay",
+  "Element Description": ""
+}

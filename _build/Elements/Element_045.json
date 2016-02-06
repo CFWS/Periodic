@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Rh",
+  "Atomic Number": 45,
+  "Name": "Rhodium",
+  "Mass": "102.9",
+  "Group": 9,
+  "Period": 5,
+  "Classification": "Transition Metals",
+  "Location": "d-block",
+  "Electron shell configuration": "2, 8, 18, 16, 1",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d8 5s1",
+  "Ionisation energy": "7.459 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "3695°C",
+  "Melting Point": "1964°C",
+  "Isotopes": "Rh-103",
+  "Discovered": "1803, William Hyde Wollaston",
+  "Element Description": ""
+}

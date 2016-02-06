@@ -1,0 +1,26 @@
+{
+  "name": "periodic",
+  "version": "1.0.0",
+  "description": "A minimalistic Periodic Table, coded in HTML5, CSS3 and Javascript.",
+  "main": "build.js",
+  "scripts": {
+    "build": "node _build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CFWS/Periodic.git"
+  },
+  "keywords": [
+    "Periodic",
+    "Table"
+  ],
+  "author": "CFWS/YC",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/CFWS/Periodic/issues"
+  },
+  "homepage": "https://github.com/CFWS/Periodic#readme",
+  "devDependencies": {
+    "handlebars": "^4.0.5"
+  }
+}

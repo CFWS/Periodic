@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "He",
+  "Atomic Number": 2,
+  "Name": "Helium",
+  "Mass": "4.003",
+  "Group": 18,
+  "Period": 1,
+  "Classification": "Noble Gas",
+  "Location": "s-block",
+  "Electron shell configuration": "2",
+  "Electron subshell configuration": "1s2 ",
+  "Ionisation energy": "24.587 eV",
+  "State at Room Temperature": "Gas",
+  "Boiling Point": "-268.93°C",
+  "Melting Point": "-272.2°C",
+  "Isotopes": "He-4",
+  "Discovered": "1868, Pierre-Jules-Cesar Janssen",
+  "Element Description": "Helium is colourless and odourless. It was first discovered on the surface of the sun when a French scientist noticed a yellow line in the sun’s spectrum. It is found in stars, as well as the surface of our sun. It makes up 0.0005% of the earth’s atmosphere, and is constantly being lost to space. However, the helium that is lost is replaced by the decay of radioactive material as they emit alpha particles. It has one key isotope, which is Helium-4. It is most commonly found as a gas, and has extremely low melting and boiling points. It is the one of the least dense gases. "
+}

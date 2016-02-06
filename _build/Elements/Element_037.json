@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Rb",
+  "Atomic Number": 37,
+  "Name": "Rubidium",
+  "Mass": "85.47",
+  "Group": 1,
+  "Period": 5,
+  "Classification": "Alkali Metals",
+  "Location": "s-block",
+  "Electron shell configuration": "2, 8, 18, 8, 1",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s1",
+  "Ionisation energy": "4.177 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "688°C",
+  "Melting Point": "39.31°C",
+  "Isotopes": "Rb-86, Rb-87",
+  "Discovered": "1861, Robert Bunsen and Gustav Kirchoff",
+  "Element Description": ""
+}

@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Au",
+  "Atomic Number": 79,
+  "Name": "Gold",
+  "Mass": "197.0",
+  "Group": 11,
+  "Period": 6,
+  "Classification": "Transition Metals",
+  "Location": "d-block",
+  "Electron shell configuration": "",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s1",
+  "Ionisation energy": "9.226 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "3129 K",
+  "Melting Point": "1337.33 K",
+  "Isotopes": "Au-197",
+  "Discovered": "Ancient",
+  "Element Description": ""
+}

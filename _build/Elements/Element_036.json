@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Kr",
+  "Atomic Number": 36,
+  "Name": "Krypton",
+  "Mass": "83.80",
+  "Group": 18,
+  "Period": 4,
+  "Classification": "Noble Gas",
+  "Location": "p-block",
+  "Electron shell configuration": "2, 8, 18, 8",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6",
+  "Ionisation energy": "14.000 eV",
+  "State at Room Temperature": "Gas",
+  "Boiling Point": "-153.22°C",
+  "Melting Point": "-157.36°C",
+  "Isotopes": "Kr-84",
+  "Discovered": "1898, Sir William Ramsay",
+  "Element Description": ""
+}

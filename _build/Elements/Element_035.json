@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Br",
+  "Atomic Number": 35,
+  "Name": "Bromine",
+  "Mass": "79.90",
+  "Group": 17,
+  "Period": 4,
+  "Classification": "Halogens",
+  "Location": "p-block",
+  "Electron shell configuration": "2, 8, 18, 7",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p5",
+  "Ionisation energy": "7.434 eV",
+  "State at Room Temperature": "Liquid",
+  "Boiling Point": "-7.2°C",
+  "Melting Point": "58.8°C",
+  "Isotopes": "Se-80",
+  "Discovered": "1800s, Carl Lowig",
+  "Element Description": ""
+}

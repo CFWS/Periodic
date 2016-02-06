@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "As",
+  "Atomic Number": 33,
+  "Name": "Arsenic",
+  "Mass": "74.92",
+  "Group": 15,
+  "Period": 4,
+  "Classification": "Metalloids",
+  "Location": "p-block",
+  "Electron shell configuration": "2, 8, 18, 5",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p3",
+  "Ionisation energy": "9.815 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "614°C",
+  "Melting Point": "817°C",
+  "Isotopes": "As-75",
+  "Discovered": "1250, Albertus Magnus",
+  "Element Description": ""
+}

@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Cs",
+  "Atomic Number": 55,
+  "Name": "Caesium",
+  "Mass": "132.9",
+  "Group": 1,
+  "Period": 6,
+  "Classification": "Alkali Metals",
+  "Location": "s-block",
+  "Electron shell configuration": "2, 8, 18, 18, 8, 1",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6, 6s1",
+  "Ionisation energy": "3.894 eV",
+  "State at Room Temperature": "Solid",
+  "Boiling Point": "671°C",
+  "Melting Point": "28.44°C",
+  "Isotopes": "Cs-133",
+  "Discovered": "1860, Robert Wilhelm Bensen, Gustav Robert Kirchoff",
+  "Element Description": ""
+}

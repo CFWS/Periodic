@@ -1,0 +1,19 @@
+﻿{
+  "Symbol": "Hg",
+  "Atomic Number": 80,
+  "Name": "Mercury",
+  "Mass": "200.6",
+  "Group": 12,
+  "Period": 6,
+  "Classification": "Transition Metals",
+  "Location": "d-block",
+  "Electron shell configuration": "",
+  "Electron subshell configuration": "1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2",
+  "Ionisation energy": "6.108 eV",
+  "State at Room Temperature": "Liquid",
+  "Boiling Point": "629.88 K",
+  "Melting Point": "234.32 K",
+  "Isotopes": "Hg-196",
+  "Discovered": "Ancient",
+  "Element Description": "The Liquid Metal, Mercury is used to make thermometers and is highly poisonous. "
+}
