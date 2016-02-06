@@ -14,8 +14,8 @@ Imports System.Windows
 <Assembly: AssemblyTitle("Elements")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("CFWS")> 
-<Assembly: AssemblyProduct("Periodic Table of Elements")> 
-<Assembly: AssemblyCopyright("Copyright © CFWS 2014-15")> 
+<Assembly: AssemblyProduct("Periodic Table of Elements")>
+<Assembly: AssemblyCopyright("Copyright © CFWS 2014-16")>
 <Assembly: AssemblyTrademark("")> 
 <Assembly: ComVisible(false)>
 
@@ -55,5 +55,6 @@ Imports System.Windows
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: NeutralResourcesLanguage("en-US")>
