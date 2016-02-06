@@ -1,6 +1,6 @@
 ##Periodic
 
-[![Build Status](https://travis-ci.org/CFWS/Periodic.svg?branch=master)](https://travis-ci.org/CFWS/Periodic)
+[![Build Status](https://travis-ci.org/CFWS/Periodic.svg?branch=gh-pages)](https://travis-ci.org/CFWS/Periodic)
 
 Periodic is an elegant, minimalistic periodic table aimed at mid-level chemistry students. Weaved with JavaScript, HTML5 and CSS3, it represents an intuitive, feature rich companion to highschool-level chemistry courses.
 
