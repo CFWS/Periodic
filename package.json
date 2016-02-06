@@ -4,7 +4,8 @@
   "description": "A minimalistic Periodic Table, coded in HTML5, CSS3 and Javascript.",
   "main": "build.js",
   "scripts": {
-    "build": "node _build/build.js"
+    "build": "node _build/build.js",
+    "test": "npm run build"
   },
   "repository": {
     "type": "git",
