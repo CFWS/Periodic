@@ -1,1 +1,0 @@
-﻿"La","Lanthanum",57,,6,138.9,"Lanthanides","f-block","2, 8, 18, 18, 9, 2","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p6 5d1 6s2","5.577 eV","Solid","3464°C","918°C","La-139","1839, Carl Gustaf Mosander",""

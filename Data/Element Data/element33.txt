@@ -1,1 +1,0 @@
-﻿"As","Arsenic",33,15,4,74.92,"Metalloids","p-block","2, 8, 18, 5","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p3","9.815 eV","Solid","614°C","817°C","As-75","1250, Albertus Magnus",""

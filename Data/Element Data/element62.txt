@@ -1,1 +1,0 @@
-﻿"Sm","Samarium",62,,6,150.4,"Lanthanides","f-block","","1s1 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f6 5s2 5p6  6s2","5.664 eV","Solid","2067 K","1347 K","","Jean Charles Galissard de Marignac, 1853",""

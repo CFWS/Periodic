@@ -1,1 +1,0 @@
-﻿"Rn","Radon",86,18,6,(222),"Noble Gas","p-block","","","10.745 eV","Gas","211.45 K","202 K","","Friedrich Ernst Dorn, in 1900",""

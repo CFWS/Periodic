@@ -1,1 +1,0 @@
-﻿"Cd","Cadmium",48,12,5,112.4,"Transition Metals","d-block","2, 8, 18, 18, 2","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2","8.994 eV","Solid","767°C","321.07°C","Cd-114","1817, Friedrich Strohmeyer",""

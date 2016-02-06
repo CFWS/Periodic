@@ -1,1 +1,0 @@
-﻿"Pb","Lead",82,14,6,207.2,"Post Transition Metals","p-block","","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s2 6p2","7.417 eV","Solid","2022 K","600.61 K","","Ancient",""

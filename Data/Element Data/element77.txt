@@ -1,1 +1,0 @@
-﻿"Ir","Iridium",77,9,6,192.2,"Transition Metals","d-block","","1s1 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d7 6s2","9.1 eV","Solid","4701 K","2719 K","Ir-191, Ir-193","Smithson Tennant in 1803",""

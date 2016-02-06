@@ -1,1 +1,0 @@
-﻿"Th","Thorium",90,,7,232.0,"Actinides","f-block","","","6.08 eV","Solid","","1845 K","","Jons Jacob Berzelius, 1828",""

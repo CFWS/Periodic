@@ -1,1 +1,0 @@
-﻿"Ac","Actinium",89,,7,(227),"Actinides","f-block","","","5.17 eV","Solid","3471 K","1324 K","","Andrew-Louis Debierne in 1899",""

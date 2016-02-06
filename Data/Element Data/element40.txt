@@ -1,1 +1,0 @@
-﻿"Zr","Zirconium",40,4,5,91.22,"Transition Metals","d-block","2, 8, 18, 10, 2","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d2 5s2","6.634 eV","Solid","4409°C","1855°C","Zr-90, Zr-92, Zr-94","1789, Martin Heinrich Klaproth",""

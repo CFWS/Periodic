@@ -1,1 +1,0 @@
-﻿"Po","Polonium",84,16,6,(209),"Metalloids","p-block","","","8.417 eV","Solid","1235 K","527 K","Po-209","Marie Curie, 1898",""

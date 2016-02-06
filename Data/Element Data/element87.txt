@@ -1,1 +1,0 @@
-﻿"Fr","Francium",87,1,7,223,"Alkali Metals","s-block","","","3.9 eV","Solid","","300 K","","Marguerite Perey, 1939",""

@@ -1,1 +1,0 @@
-﻿"I","Iodine",53,17,5,126.9,"Halogens","p-block","2, 8, 18, 18, 7","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p5","10.451 eV","Solid","184.4°C","113.7°C","I-127","1811, Barnard Courtois",""

@@ -1,1 +1,0 @@
-﻿"Sn","Tin",50,14,5,118.7,"Post Transition Metals","d-block","2, 8, 18, 18, 4","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 5s2 5p2","7.344 eV","Solid","2602°C","231.93°C","Sn-120","Prehistoric",""

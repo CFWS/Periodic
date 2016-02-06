@@ -1,1 +1,0 @@
-﻿"Co","Cobalt",27,9,4,58.93,"Transition Metals","d-block","2, 8, 15, 2","1s2 2s2 2p6 3s2 3p6 3d7 4s2  ","7.881 eV","Solid","2927°C","1495°C","Fe-59","1739, Georg Brandt",""

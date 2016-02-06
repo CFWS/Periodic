@@ -1,1 +1,0 @@
-﻿"Sr","Strontium",38,2,5,87.62,"Alkali Earths Metals","s-block","2, 8, 18, 8, 2","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 5s2","45.695 eV","Solid","1382°C","777°C","Sr-86, Sr-87, Sr-88","1790, Adair Crawford",""

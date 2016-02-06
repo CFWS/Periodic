@@ -1,1 +1,0 @@
-﻿"Kr","Krypton",36,18,4,83.80,"Noble Gas","p-block","2, 8, 18, 8","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6","14.000 eV","Gas","-153.22°C","-157.36°C","Kr-84","1898, Sir William Ramsay",""

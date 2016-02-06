@@ -1,1 +1,0 @@
-﻿"Tc","Technetium",43,7,5,(98),"Transition Metals","d-block","2, 8, 18, 13, 2","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s2","7.28 eV","Solid","4265°C","2157°C","Unknown","1937, Carlo Perrier, Emilio Segre",""

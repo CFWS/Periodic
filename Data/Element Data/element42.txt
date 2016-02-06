@@ -1,1 +1,0 @@
-﻿"Mo","Molybdenum",42,6,5,95.96,"Transition Metals","d-block","2, 8, 18, 13, 1","1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d5 5s1","7.092 eV","Solid","4639°C","2623°C","Mo-95, Mo-96, Mo-98","1778, Carl Welhelm Scheele",""
