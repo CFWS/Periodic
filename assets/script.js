@@ -1,482 +1,537 @@
 /*global document, console, window, elementinfo*/
-/*jslint browser:true */
+/*jslint browser:true, vars:true, plusplus: true*/
 
-var screenheight = 0;
-var screenwidth = 0;
-var animatetime = '5s';
-var infopageactivated = false;
-var hviewactivated = false;
+// Defines a 3D coordinate
+var Point = function (x, y, z) {
+    "use strict";
+    this.x = x;
+    this.y = y;
+    this.z = z;
+};
 
-var scalefinish = false;
-var smallsite = false;
-var mobilesite = false;
+// Table Element (Data, State)
+var TableElement = function (info) {
+    "use strict";
+    // Element Information
+    this.Name = info.Name;
+    this.Symbol = info.Symbol;
+    this.Mass = info.Mass;
+    this.Number = info['Atomic Number'];
+    this.Classification = info.Classification;
+    this.Group = info.Group;
+    this.Period = info.Period;
+    this.Location = info.Location;
+    this.Shellconfiguration = info['Electron shell configuration'];
+    this.Subshellconfiguration = info['Electron subshell configuration'];
+    this.Ionenergy = info['Ionisation energy'];
+    this.Roomstate = info['State at Room Temperature'];
+    this.Boiling = info['Boiling Point'];
+    this.Melting = info['Melting Point'];
+    this.Isotopes = info.Isotopes;
+    this.Discovered = info.Discovered;
+    this.Description = info['Element Description'];
 
-var EleNum;
-var TimerMove;
-
-var CurrentHElement = 1;
-
-var ElementPosition = new Array(118);
-var showTable = 0;
-
-
-function changeperspective(toggle)
-{
-    var totalclassName = "";
-    if (showTable === true)
-        {
-            totalclassName += "show";
-        }
-    else if (showTable === false)
-        {
-            totalclassName += "hide";
-        }
-    if (toggle === 1)
-        {
-            totalclassName += " perspective";
-        }
-    document.getElementById('ptablecontainer').className = totalclassName;
-}
-
-function periodictable(animatetime, type) {
-    if (type === 1) { //Horizontal
-        horizontalchange(1, true);
-        document.getElementById('eledes').className = "showbottompane";
-    } else {
-        if (hviewactivated === true) { // Deactivate Bottom Panel
-            document.getElementById('eledes').className = "hidebottompane";
-            hviewactivated = false;
-        }
+    // Calculate Table Locations
+    var locx = -(35 + 60 * 9) + this.Group * 60;
+    var locy = -(10 + 5 * 70) + this.Period * 70;
+    var locz = 0;
+    if (this.Number >= 56 + 1 && this.Number < 71 + 1) {
+        locx = -(35 + 60 * 10) + (this.Number - 52) * 60;
+        locy = -(10 + 5 * 70) + 8.3 * 70;
+    }
+    if (this.Number >= 88 + 1 && this.Number < 103 + 1) {
+        locx = -(35 + 60 * 10) + (this.Number - 84) * 60;
+        locy = -(10 + 5 * 70) + 9.3 * 70;
     }
 
-    window.clearInterval(TimerMove);
+    // Locations for Table Form
+    this.TableLocation = new Point(locx, locy, 0);
 
+    // Random
+    locx = Math.floor(Math.random() * window.innerWidth - window.innerWidth / 2);
+    locy = Math.floor(Math.random() * window.innerHeight - window.innerHeight / 2);
+    locz = 0; // For perspective problems
+    this.randomLocation = new Point(locx, locy, locz);
+};
+TableElement.prototype.generateNewRandomPosition = function () {
+    "use strict";
+    // Randomise and change position
+    var r = Math.floor((Math.random() * 3) + 1);
+    if (r === 1) {
+        // Change X
+        this.randomLocation.x = Math.floor(Math.random() * window.innerWidth - window.innerWidth / 2);
+    } else if (r === 2) {
+        // Change Y
+        this.randomLocation.y = Math.floor(Math.random() * window.innerHeight - window.innerHeight / 2);
+    } else if (r === 3) {
+        // Change Z
+        this.randomLocation.z = Math.floor(Math.random() * window.innerHeight * 2 - window.innerHeight / 2 * 2);
+    }
+};
+
+// App
+var App = function () {
+    "use strict";
+    // Elements
+    this.elementArray = [];
+    this.elements = document.querySelectorAll('.element');
+
+    // Status
+    this.currentInfoPageElementNumber = 1;
+    this.currentHorizontalElementNumber = 1;
+    this.currentView = "table";
+    this.infoPageActivated = false;
+    this.timerMove = null;
+    this.initFinished = false;
+
+    // Min. Width or Mobile
+    this.smallMode = false;
+
+    // Create new Element Objects
+    var i;
+    for (i = 0; i < 118; i++) {
+        this.elementArray.push(new TableElement(elementinfo[i]));
+    }
+
+    // Element Clicks
     var elements = document.querySelectorAll(".element");
-    var locx, locy, locz; 
+    for (i = 0; i < elements.length; i++) {
+        this.linkInfo(elements[i], i + 1);
+    }
 
-    for (var i = 0; i < elements.length; i++) {
-        if (type === 0) { //Random - Random X,Y,Z Values
-            // For Future, Move in One Direction Only
-            locx = (Math.floor(Math.random() * screenwidth - screenwidth / 2));
-            locy = (Math.floor(Math.random() * screenheight - screenheight / 2));
-            locz = (Math.floor(Math.random() * screenheight * 2 - screenheight / 2 * 2));
-            
-            ElementPosition[i][0] = locx; ElementPosition[i][1] = locy; ElementPosition[i][2] = locz;
-            
-            elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
-            elements[i].style.transitionDuration = animatetime;
-        } else if (type == 0.25) { 
-            var r  = Math.floor((Math.random() * 3) + 1);     
-            if (r == 1)
-                {
-                    locx = (Math.floor(Math.random() * screenwidth - screenwidth / 2));
-                    locy = ElementPosition[i][1]; locz = ElementPosition[i][2];
-                }
-            else if (r == 2)
-                {
-                    locy = (Math.floor(Math.random() * screenheight - screenheight / 2));
-                    locx = ElementPosition[i][0]; locz = ElementPosition[i][2];
-                }
-            else if (r == 3)
-                {
-                    locz = (Math.floor(Math.random() * screenheight * 2 - screenheight / 2 * 2));
-                    locy = ElementPosition[i][1]; locx = ElementPosition[i][0];
-                }
-            
-            ElementPosition[i][0] = locx; ElementPosition[i][1] = locy; ElementPosition[i][2] = locz;
-            
-            elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
-            elements[i].style.transitionDuration = animatetime;
-        } else if (type == 0.5) { //Init Form - Elements Fly In
-            locx = (Math.floor(Math.random() * 9999 - 9999 / 2));
-            locy = (Math.floor(Math.random() * 9999 - 9999 / 2));
-            locz = (Math.floor(Math.random() * 9999 * 2 - 9999 / 2 * 2));
+    // Prev/Next Buttons
+    this.initprevnext();
+    this.initHorizontal();
+    this.initViewButtons();
+    this.initKey();
 
-            elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
-            elements[i].style.transitionDuration = animatetime;
-        } else if (type == 2) { //Table
-            var elelocation = (i + 1) * 17; //32.5 + 560
-            locx = -(35 + 60 * 9) + (elementinfo[elelocation - 14]) * 60;
-            locy = -(10 + 5 * 70) + (elementinfo[elelocation - 13]) * 70;
-
-            if (i >= 56 && i < 71) {
-                locy = -(10 + 5 * 70) + 8.3 * 70;
-                locx = -(35 + 60 * 9) + (i - 52) * 60;
-            }
-            if (i >= 88 && i < 103) {
-                locx = -(35 + 60 * 9) + (i - 84) * 60;
-                locy = -(10 + 5 * 70) + 9.3 * 70;
-            }
-
-            elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,0)';
-            elements[i].style.transitionDuration = animatetime;
+    // Resize
+    var self = this;
+    // Scale Table to Fit
+    window.onresize = function () {
+        self.resizePage();
+    };
+    // For Tablet Devices
+    window.onorientationchange = function () {
+        self.resizePage();
+    };
+};
+// Returns element by number - e.g. 1 will return Hydrogen
+App.prototype.getElement = function (elementNumber) {
+    "use strict";
+    return this.elementArray[elementNumber - 1];
+};
+// When user clicks on an element
+App.prototype.linkInfo = function (element, number) {
+    "use strict";
+    var self = this;
+    element.onclick = function () {
+        if (self.currentView === "horizontal" && self.currentHorizontalElementNumber !== number) {
+            self.Horizontal(number, false);
+            return;
         }
+        self.loadInfoPage(number, true);
+    };
+};
+// View Buttons
+App.prototype.initViewButtons = function () {
+    "use strict";
+    var self = this;
+    // Table Form
+    document.getElementById('tableform').onclick = function () {
+        if (self.currentView === "horizontal") {
+            document.getElementById('eledes').className = "hidebottompane";
+        } else if (self.currentView === "random") {
+            window.clearInterval(self.timerMove);
+        }
+        self.Table();
+        window.setTimeout(function () {document.getElementById('ptablecontainer').className = "show"; }, 2000);
+    };
+    // Random Form
+    document.getElementById('movingform').onclick = function () {
+        if (self.currentView === "horizontal") {
+            document.getElementById('eledes').className = "hidebottompane";
+        }
+        self.Random();
+    };
+    // Horizontal Form
+    document.getElementById('horizontalform').onclick = function () {
+        if (self.currentView === "random") {
+            window.clearInterval(self.timerMove);
+        }
+        self.Horizontal(1, true);
+        window.setTimeout(function () {document.getElementById('ptablecontainer').className = "show"; }, 2000);
+    };
+};
+// Prev/Next Buttons
+App.prototype.initprevnext = function () {
+    "use strict";
+    var load = this.loadInfoPage.bind(this);
+    var self = this;
+    document.getElementById('prev').onclick = function () {
+        load(self.currentInfoPageElementNumber - 1);
+    };
+    document.getElementById('next').onclick = function () {
+        load(self.currentInfoPageElementNumber + 1);
+    };
+    document.getElementById('closewindow').onclick = function () {
+        document.getElementById('ptablecontainer').className = "show";
+        document.getElementById('infocontainer').style.marginLeft = '-9999px';
+        self.infoPageActivated = false;
+    };
+};
+// Horizontal Prev/Next
+App.prototype.initHorizontal = function () {
+    "use strict";
+    var self = this;
+    document.getElementById('hprev').onclick = function () {
+        self.Horizontal(self.currentHorizontalElementNumber - 1, false);
+    };
+    document.getElementById('hnext').onclick = function () {
+        self.Horizontal(self.currentHorizontalElementNumber + 1, false);
+    };
+};
+// Init Intro - Elements Fly In
+App.prototype.initIntro = function () {
+    "use strict";
+    // Do not transform on small mode
+    if (this.smallMode) {
+        return;
     }
-    if (type === 0.25 || type === 0) {
-        changeperspective(1);
-        TimerMove = setInterval(function () { //Activate 5s Timer
-            periodictable("5s", 0.25);
-        }, 5000);
+    // Assign random locations for each element
+    var i, locx, locy, locz;
+    for (i = 0; i < this.elements.length; i++) {
+        locx = (Math.floor(Math.random() * 9999 - 9999 / 2));
+        locy = (Math.floor(Math.random() * 9999 - 9999 / 2));
+        locz = (Math.floor(Math.random() * 9999 * 2 - 9999 / 2 * 2));
+        this.elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,' + locz + 'px)';
+        this.elements[i].style.transitionDuration = '0s';
     }
-    if (type === 0.5) {
-        changeperspective(1);
-    }
-}
 
-function elementpage(elementnum) { //Info Page
-    if (hviewactivated === true) {
-        if (elementnum != CurrentHElement) {
-            horizontalchange(elementnum, true);
-            return false;
-        }
+    // this.elements[117].addEventListener("transitionend", this.Intro(), true);
+    var self = this;
+    window.setTimeout(function () {self.Table('5s'); }, 20);
+    window.setTimeout(function () {self.initFinished = true; }, 5000);
+};
+App.prototype.Random = function (time) {
+    "use strict";
+    time = time || '5s';
+    if (this.initFinished === false) {
+        return;
     }
-    if ((smallsite === true) || (mobilesite === true)) {
-        document.getElementById('infocontainer').style.opacity = 0;
-        if (scalefinish === true) {
-            window.scrollTo(0, document.getElementById('infocontainer').offsetTop);
+    if (this.currentView !== 'random') {
+        this.currentView = 'random';
+    }
+    // Perpective for z
+    document.getElementById('ptablecontainer').className = "show perspective";
+    // Loop
+    var self = this;
+    window.clearInterval(this.timerMove);
+    this.timerMove = window.setTimeout(function () {self.Random(); }, 5000);
+    // Transform to determined random Locations
+    var i, elementposition;
+    for (i = 0; i < this.elements.length; i++) {
+        this.elementArray[i].generateNewRandomPosition();
+        elementposition = this.elementArray[i].randomLocation;
+        this.elements[i].style.transform = 'translate3d(' + elementposition.x + 'px,' + elementposition.y + 'px,' + elementposition.z + 'px)';
+        this.elements[i].style.transitionDuration = time;
+    }
+};
+// Table
+App.prototype.Table = function (time) {
+    "use strict";
+    // Default time of 2s
+    time = time || '2s';
+    // Update status to 'table'
+    if (this.currentView !== "table") {
+        this.currentView = "table";
+    }
+    this.currentView = 'random';
+    // Transform to predetermined Table Locations
+    var i, elementposition;
+    for (i = 0; i < this.elements.length; i++) {
+        elementposition = this.elementArray[i].TableLocation;
+        this.elements[i].style.transform = 'translate3d(' + elementposition.x + 'px,' + elementposition.y + 'px,0)';
+        this.elements[i].style.transitionDuration = time;
+    }
+};
+// Horizontal
+App.prototype.Horizontal = function (elementNumber, first) {
+    "use strict";
+    // Update Internal Number
+    this.currentView = "horizontal";
+    this.currentHorizontalElementNumber = elementNumber;
+    if (first) {
+        document.getElementById('eledes').className = "showbottompane";
+    }
+
+    // Get list of elements
+    var elements = this.elements;
+    // Locations / Animation Time
+    var locx = elementNumber * -61, locy = 100, scale = 1;
+    var animatetime = "0.1s";
+
+    // Update element positions
+    var i;
+    for (i = 0; i < elements.length; i++) {
+        locx = locx + 60;
+
+        // Currently Selected Element
+        if (i + 1 === elementNumber) {
+            // Move upwards, scale 3x, increase animation time
+            locy = -100;
+            scale = 3;
+            animatetime = "0.5s";
+        } else {
+            scale = 1;
+            locy = 100;
         }
-        document.getElementById('infocontainer').style.opacity = 1;
-    } else //Activate/Show Info Page
-    {
-        document.getElementById('ptablecontainer').className = "hide";
-        showTable = false;
+        // Transform elements into place
+        elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,0) scale(' + scale + ')';
+
+        // On activation of Horizontal View
+        if (first === true) {
+            animatetime = '2s';
+        }
+        elements[i].style.transitionDuration = animatetime;
+    }
+
+    // Load Description
+    if (this.getElement(elementNumber).Description === '') {
+        document.getElementById('eledesinfo').innerHTML = 'Element description not done yet.';
+    } else {
+        document.getElementById('eledesinfo').innerHTML = this.getElement(elementNumber).Description;
+    }
+
+    // Load Prev/Next
+    if (elementNumber > 1) {
+        document.getElementById('hprev').innerHTML = "Previous Element (" + this.getElement(elementNumber - 1).Name + ")";
+    } else {
+        document.getElementById('hprev').innerHTML = "";
+    }
+    if (elementNumber < 118) {
+        document.getElementById('hnext').innerHTML = "Next Element (" + this.getElement(elementNumber + 1).Name + ")";
+    } else {
+        document.getElementById('hnext').innerHTML = "";
+    }
+};
+App.prototype.loadInfoPage = function (elementNumber, animateto) {
+    "use strict";
+    animateto = animateto || false;
+    this.currentInfoPageElementNumber = elementNumber;
+    // Activate / Show Info Page
+    if (!this.infoPageActivated) {
+        // Go back to table view
+        if (this.currentView === 'random' && this.smallMode === false) {
+            document.getElementById('ptablecontainer').className = "hide perspective";
+            this.Table();
+            window.clearInterval(this.timerMove);
+        }
+        if (!this.smallMode) {
+            document.getElementById('ptablecontainer').className = "hide";
+        }
         document.getElementById('infocontainer').style.marginLeft = '0px';
     }
-    infopageactivated = true;
-    var elelocation = elementnum * 17;
-    document.getElementById('elementsym').innerHTML = elementinfo[elelocation - 17];
-    document.getElementById('symbol').innerHTML = "Symbol: " + elementinfo[elelocation - 17];
-    document.getElementById('elename').innerHTML = "Name: " + elementinfo[elelocation - 16];
-    document.getElementById('elenumber').innerHTML = "Atomic Number: " + elementinfo[elelocation - 15];
-    EleNum = elementinfo[elelocation - 15];
-    document.getElementById('elemass').innerHTML = "Mass: " + elementinfo[elelocation - 12];
-    document.getElementById('eleclassification').innerHTML = "Classification: " + elementinfo[elelocation - 11];
-    document.getElementById('elelocation').innerHTML = "Location: " + "Group " + elementinfo[elelocation - 14] + ", Period " + elementinfo[elelocation - 13] + ", " + elementinfo[elelocation - 10];
+    this.infoPageActivated = true;
 
-    if (elementinfo[elelocation - 14] === undefined) {
-        document.getElementById('elelocation').innerHTML = "Location: " + "Group " + "None" + ", Period " + elementinfo[elelocation - 13] + ", " + elementinfo[elelocation - 10];
+    // Mobile Mode - Jump to Info Page - Rather than slide open
+    if (this.smallMode) {
+        document.getElementById('ptablecontainer').className = "show";
+        document.getElementById('infocontainer').style.opacity = 0;
+        document.getElementById('infocontainer').style.opacity = 1;
+        if (animateto === true) {
+            window.scrollTo(0, document.getElementById('infocontainer').offsetTop);
+        }
     }
-    if (elementinfo[elelocation - 12] === undefined) {
+
+    // Update Info Page Values
+    var element = this.getElement(elementNumber);
+    document.getElementById('elementsym').innerHTML = element.Symbol;
+    document.getElementById('symbol').innerHTML = "Symbol: " + element.Symbol;
+    document.getElementById('elename').innerHTML = "Name: " + element.Name;
+    document.getElementById('elenumber').innerHTML = "Atomic Number: " + element.Number;
+    document.getElementById('elemass').innerHTML = "Mass: " + element.Mass;
+    document.getElementById('eleclassification').innerHTML = "Classification: " + element.Classification;
+    document.getElementById('elelocation').innerHTML = "Location: " + "Group " + element.Group + ", Period " + element.Period + ", " + element.Location;
+    document.getElementById('eleshellconfig').innerHTML = "Electron Shell Configuration: " + element.Shellconfiguration;
+    document.getElementById('elesubshellconfig').innerHTML = "Electron subshell configuration: " + element.Subshellconfiguration;
+    document.getElementById('eleionisation').innerHTML = "Ionisation energy: " + element.Ionenergy;
+    document.getElementById('elestate').innerHTML = "State at Room Temperature: " + element.Roomstate;
+    document.getElementById('eleboiling').innerHTML = "Boiling Point: " + element.Boiling;
+    document.getElementById('elemelting').innerHTML = "Melting Point: " + element.Melting;
+    document.getElementById('eleisotopes').innerHTML = "Isotopes: " + element.Isotopes;
+    document.getElementById('elediscovery').innerHTML = "Discovered: " + element.Discovered;
+    document.getElementById('elementdescription').innerHTML = "Element Description: " + element.Description;
+
+    // Undefined Group/Mass
+    if (element.Group === undefined || element.Group === null) {
+        document.getElementById('elelocation').innerHTML = "Location: " + "Group " + "None" + ", Period " + element.Period + ", " + element.Location;
+    }
+    if (element.Mass === undefined) {
         document.getElementById('elemass').innerHTML = "Mass: ";
     }
 
-    document.getElementById('eleshellconfig').innerHTML = "Electron Shell Configuration: " + elementinfo[elelocation - 9];
-    document.getElementById('elesubshellconfig').innerHTML = "Electron subshell configuration: " + elementinfo[elelocation - 8];
-    document.getElementById('eleionisation').innerHTML = "Ionisation energy: " + elementinfo[elelocation - 7];
-    document.getElementById('elestate').innerHTML = "State at Room Temperature: " + elementinfo[elelocation - 6];
-    document.getElementById('eleboiling').innerHTML = "Boiling Point: " + elementinfo[elelocation - 5];
-    document.getElementById('elemelting').innerHTML = "Melting Point: " + elementinfo[elelocation - 4];
-    document.getElementById('eleisotopes').innerHTML = "Isotopes: " + elementinfo[elelocation - 3];
-    document.getElementById('elediscovery').innerHTML = "Discovered: " + elementinfo[elelocation - 2];
-    document.getElementById('elementdescription').innerHTML = "Element Description: " + elementinfo[elelocation - 1];
-
-    if (EleNum > 1) {
-        document.getElementById('prev').innerHTML = "Previous Element (" + elementinfo[(elementnum - 1) * 17 - 16] + ")";
+    // Prev/Next
+    if (element.Number > 1) {
+        document.getElementById('prev').innerHTML = "Previous Element (" + this.getElement(element.Number - 1).Name + ")";
     } else {
         document.getElementById('prev').innerHTML = "";
     }
-    if (EleNum < 118) {
-        document.getElementById('next').innerHTML = "Next Element (" + elementinfo[(elementnum + 1) * 17 - 16] + ")";
+    if (element.Number < 118) {
+        document.getElementById('next').innerHTML = "Next Element (" + this.getElement(element.Number + 1).Name + ")";
     } else {
         document.getElementById('next').innerHTML = "";
     }
 
-    //Website Links
-    document.getElementById('webelements').href = "http://www.webelements.com/" + (elementinfo[elelocation - 16]).toLowerCase();
-    document.getElementById('chemicool').href = "http://www.chemicool.com/elements/" + (elementinfo[elelocation - 16]).toLowerCase();
-    document.getElementById('rsc').href = "http://www.rsc.org/periodic-table/element/" + (elementinfo[elelocation - 15]);
-    var formattnum = ("00" + elementinfo[elelocation - 15]).slice(-3);
+    // Website Links
+    document.getElementById('webelements').href = "http://www.webelements.com/" + element.Name.toLowerCase();
+    document.getElementById('chemicool').href = "http://www.chemicool.com/elements/" + element.Name.toLowerCase();
+    document.getElementById('rsc').href = "http://www.rsc.org/periodic-table/element/" + element.Number;
+    var formattnum = ("00" + element.Number).slice(-3);
     document.getElementById('jlab').href = "http://education.jlab.org/itselemental/ele" + formattnum + ".html";
     document.getElementById('photographic').href = "http://periodictable.com/Elements/" + formattnum;
-}
-
-function exitinfopage() //Exit Info Page
-{
-    if ((smallsite === true) || (mobilesite === true) === false) {
-        document.getElementById('infocontainer').style.marginLeft = '-9999px';
-        infopageactivated = false;
-        document.getElementById('ptablecontainer').className = "show";
-        showTable = true;
-    }
-}
-
-function changeclick(changetype) //Change Element HView on KeyPress/Click
-{
-    if (changetype == 'prev') {
-        if (CurrentHElement > 1) {
-            horizontalchange(CurrentHElement - 1, false);
-        }
-    } else if (changetype == 'next') {
-        if (CurrentHElement < 118) {
-            horizontalchange(CurrentHElement + 1, false);
-        }
-    }
-}
-
-function elementchange(changetype) //HView Change Element
-{
-    if (changetype == 'prev') {
-        if (EleNum > 1) {
-            elementpage(EleNum - 1);
-        }
-    } else if (changetype == 'next') {
-        if (EleNum < 118) {
-            elementpage(EleNum + 1);
-        }
-    }
-}
-
-function horizontalchange(elenum, first) { //HView Change(Move) Element
-    hviewactivated = true;
-    var elements = document.querySelectorAll(".element");
-
-    //Normal Scaling for Bottom Row, 3x Scaling for Displayed Element
-    var locx = 0, locy = 0;
-    var scalex = 1, scaley = 1;
-
-    CurrentHElement = elenum;
-    locx = CurrentHElement * -61; //Element Placement
-
-    animatetime = "0.1s";
-
-    for (var i = 0; i < elements.length; i++) {
-        locx = locx + 60;
-        scalex = 1;
-        scaley = 1;
-        locy = 100;
-
-        if (i + 1 == elenum) {
-            locy = -100;
-            scalex = 3;
-            scaley = 3;
-            animatetime = "0.5s";
-        }
-
-        if (first === true) //Activate - Horizontal
-        {
-            animatetime = '2s';
-        }
-
-        elements[i].style.transform = 'translate3d(' + locx + 'px,' + locy + 'px,0) scale(' + scalex + ',' + scaley + ')';
-        elements[i].style.transitionDuration = animatetime;
-    }
-
-    CurrentHElement = elenum;
-    //Load Description/Prev/Next for Horizontal View
-    var elelocation = elenum * 17;
-    if (elementinfo[elelocation - 1] === '') {
-        document.getElementById('eledesinfo').innerHTML = 'Element description not done yet.';
-    } else {
-        document.getElementById('eledesinfo').innerHTML = elementinfo[elelocation - 1];
-    }
-
-    if (elenum > 1) {
-        document.getElementById('hprev').innerHTML = "Previous Element (" + elementinfo[elelocation - 16 - 17] + ")";
-    } else {
-        document.getElementById('hprev').innerHTML = "";
-    }
-    if (elenum < 118) {
-        document.getElementById('hnext').innerHTML = "Next Element (" + elementinfo[elelocation - 16 + 17] + ")";
-    } else {
-        document.getElementById('hnext').innerHTML = "";
-    }
-}
-
-function switchoffperspective()
-{
-    changeperspective(0);
-}
-function switchonperspective()
-{
-    changeperspective(1);
-}
-
-var perspective;
-
-function formbtnclick() //Clicking, Clicking, Lots of Clicking
-{
-    document.getElementById('tableform').onclick = function () {
-        periodictable("3s", 2);
-        perspective = setTimeout(switchoffperspective, 5000);
-    };
-    document.getElementById('movingform').onclick = function () {
-        clearTimeout(perspective);
-        switchonperspective();
-        perspective = periodictable("5s", 0);
-    };
-    document.getElementById('horizontalform').onclick = function () {
-        periodictable("3s", 1);
-        perspective = setTimeout(switchoffperspective, 5000);
-    };
-    document.getElementById('closewindow').onclick = function () {
-        exitinfopage();
-    };
-    document.getElementById('next').onclick = function () {
-        elementchange('next');
-    };
-    document.getElementById('prev').onclick = function () {
-        elementchange('prev');
-    };
-    document.getElementById('hprev').onclick = function () {
-        changeclick('prev');
-    };
-    document.getElementById('hnext').onclick = function () {
-        changeclick('next');
-    };
-    //Handles Element Click / Description
-    var elements = document.querySelectorAll(".element");
-    for (var i = 0; i < elements.length; i++) {
-        clickElement(elements[i], i);
-    }
-}
-function clickElement(ele, index) {
-    (ele).onclick = function () {
-        elementpage(index + 1);
-    };
-}
-
-document.onreadystatechange = function () {
-    if (document.readyState == "complete") { //Wait for DOM
-        
-        for (var i = 0; i <= ElementPosition.length - 1; i++)
-        {
-            ElementPosition[i] = new Array(3);
-        }
-        
-        if (navigator.userAgent.match(/iPhone/i) || (navigator.userAgent.match(/iPod/i))) { //Activate Mobile View on Device Detection
-            mobilesite = true;
-            var style = document.createElement('link');
-            style.type = 'text/css';
-            style.href = 'assets/mobile.css';
-            style.rel = 'stylesheet';
-            document.getElementsByTagName('head')[0].appendChild(style);
-            elementpage(1); //Activate Hydrogen for Bottom
-        }
-
-        if (mobilesite === false) {
-            JScale(); //Scale Page
-        } else {
-            scalefinish = true;
-        }
-
-        formbtnclick(); //Activate func
-
-        if ((smallsite === false) && (mobilesite === false)) { //Animate in if not Small/Mobile
-            periodictable("0s", 0.5);
-            setTimeout(initTable, 0);
-            perspective = setTimeout(switchoffperspective, 5000);
-        }
-    }
 };
-
-function initTable() {
-    periodictable(animatetime, 2);
-}
-
-window.onresize = function () {
-    JScale(); //Scale Table to Fit
-};
-window.onorientationchange = function () {
-    JScale(); // For Tablet Devices
-};
-function JScale() //For Scaling of Table
-{
-    var element = document.querySelectorAll('.element');
+// Page Resize
+App.prototype.resizePage = function () {
+    "use strict";
+    // For Scaling of Table
+    var elements = document.querySelectorAll('.element');
     var i = 0;
 
-    if (window.innerWidth <= 480) { //Less than 480px
-        if (scalefinish === false) {
-            exitinfopage();
+    // Less than 480px
+    if (window.innerWidth <= 480) {
+        this.smallMode = true;
 
-            // Reset Info Container if Open
-            document.getElementById('infocontainer').removeAttribute('style');
-            document.getElementById('infocontainer').style.opacity = 0;
+        // Clear Timers for Random Mode
+        window.clearInterval(this.timerMove);
 
-            smallsite = true;
-            // Reset Transforms
-            document.getElementById('ptablecontainer').removeAttribute('style');
-            showTable = true;
+        // Exit/Reset Info Page
+        document.getElementById('ptablecontainer').removeAttribute('style');
+        document.getElementById('ptablecontainer').className = "show";
+        document.getElementById('infocontainer').style.marginLeft = '0';
+        document.getElementById('infocontainer').removeAttribute('style');
+        document.getElementById('infocontainer').style.height = '100%';
 
-            for (i = 0; i < element.length; i++) {
-                element[i].removeAttribute('style');
-                element[i].style.transitionDuration = "0s";
-            }
-
-            elementpage(1);
-            scalefinish = true;
+        // Remove Transforms for Elements
+        for (i = 0; i < elements.length; i++) {
+            elements[i].removeAttribute('style');
+            elements[i].style.transitionDuration = "0s";
         }
+
+        // Exit horizontal mode (if applicable)
+        if (this.currentView === 'horizontal') {
+            this.currentView = "table";
+            document.getElementById('eledes').className = "hidebottompane";
+        }
+
+        // Load the first element
+        this.loadInfoPage(1);
     } else {
-        scalefinish = false;
-        screenheight = window.innerHeight;
-        screenwidth = window.innerWidth;
+        // Get width/height of current window
+        var screenheight = window.innerHeight, screenwidth = window.innerWidth;
+        // Preset
+        var screenh = 720, screenw = 1320;
 
-        var screenh = 720;
-        var screenw = 1320;
-
+        // Find the Smaller Aspect (Horizontal / Vertical)
         var screenscaleh = screenheight / screenh;
         var screenscalew = screenwidth / screenw;
-
-        var screenaspect; //Take the Smallest Scale
-
+        var screenaspect;
         if (screenscaleh > screenscalew) {
             screenaspect = screenscalew;
         } else {
             screenaspect = screenscaleh;
         }
-
+        // Round to 2 decimal places
         screenaspect = Math.round(screenaspect * 100) / 100;
 
-        var changescale = document.getElementById('ptablecontainer');
+        // Hide Info container, show Table
+        document.getElementById('infocontainer').removeAttribute('style');
+        document.getElementById('infocontainer').style.marginLeft = '-9999px';
+        document.getElementById('infocontainer').className = 'hide';
+        if (document.getElementById('ptablecontainer').className.includes('show') === false) {
+            document.getElementById('ptablecontainer').className = 'show';
+        }
+        this.infoPageActivated = false;
 
-        //Perhaps use Vendor Prefix Detection - Future, Scale Container
+        // Scale Container
+        // Perhaps use Vendor Prefix Detection/Zoom for Future
+        var changescale = document.getElementById('ptablecontainer');
         var scalestyle = 'scale(' + screenaspect + ',' + screenaspect + ')';
         changescale.style.webkitTransform = scalestyle;
         changescale.style.Transform = scalestyle;
         changescale.style.MozTransform = scalestyle;
         changescale.style.msTransform = scalestyle;
 
-        if (smallsite === true) {
-            for (i = 0; i < element.length; i++) {
-                element[i].style.transitionDuration = "0s";
-            }
-            periodictable("0s", 0.5);
-            setTimeout(initTable, 50);
-            smallsite = false;
+        if (this.smallMode === true) {
+            this.smallMode = false;
+            this.initFinished = false;
+            this.initIntro();
         }
+    }
+};
+// Keyboard Navigation
+App.prototype.initKey = function () {
+    "use strict";
+    var self = this;
+    window.onkeydown = function (e) {
+        if (navigator.userAgent.match('Mozilla')) {
+            if (e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 ||
+                    e.keyCode === 40 || e.keyCode === 33 || e.keyCode === 34) {
+                // Arrow Keys
+                if (self.smallMode === false) {
+                    // To Allow Scrolling when Mobile or Small
+                    e.preventDefault();
+                }
+            }
+        }
+        // Info Page Element Navigation
+        if (self.infoPageActivated === true) {
+            if (e.keyCode === 27) {
+                // ESC - Exit Info Page
+                document.getElementById('infocontainer').style.marginLeft = '-9999px';
+                document.getElementById('infocontainer').className = 'hide';
+                document.getElementById('ptablecontainer').className = 'show';
+                self.infoPageActivated = false;
+            } else if (e.keyCode === 39 && self.currentInfoPageElementNumber < 118) {
+                // Right - Next Element
+                self.loadInfoPage(self.currentInfoPageElementNumber + 1);
+            } else if (e.keyCode === 37 && self.currentInfoPageElementNumber > 1) {
+                // Left - Prev Element
+                self.loadInfoPage(self.currentInfoPageElementNumber - 1);
+            }
+        }
+        if (self.currentView === 'horizontal' && self.infoPageActivated === false) {
+            // Horizontal View Prev/Next
+            if (e.keyCode === 39 && self.currentHorizontalElementNumber < 118) {
+                self.Horizontal(self.currentHorizontalElementNumber + 1, false);
+            } else if (e.keyCode === 37 && self.currentHorizontalElementNumber > 1) {
+                self.Horizontal(self.currentHorizontalElementNumber - 1, false);
+            }
+        }
+    };
+};
 
-        document.getElementById('ptablecontainer').className = "show";
-        showTable = true;
-    }
-}
-window.onkeydown = function (e) {
-    if (navigator.userAgent.match('Mozilla')) { //alert(e.keyCode);
-        if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 || e.keyCode == 33 || e.keyCode == 34) { //Arrow Keys
-            if (smallsite === false) { //To Enable Scrolling when Mobile or Small
-                e.preventDefault();
-            }
-        }
-    }
-    if (infopageactivated === true) {
-        if (e.keyCode == 27) { //ESC
-            exitinfopage(); //Info Page Exit
-        } else if (e.keyCode == 39) { //Right
-            if (EleNum < 118) {
-                elementpage(EleNum + 1); //Next Element
-            }
-        } else if (e.keyCode == 37) { //Left
-            if (EleNum > 1) {
-                elementpage(EleNum - 1); //Prev Element
-            }
-        }
-    }
-    if (hviewactivated === true) //HView Prev/Next
-    {
-        if (infopageactivated === false) {
-            if (e.keyCode == 39) {
-                changeclick('next');
-            } else if (e.keyCode == 37) {
-                changeclick('prev');
-            }
+document.onreadystatechange = function () {
+    "use strict";
+    // When page is loaded
+    if (document.readyState === "complete") {
+        // Init App
+        var periodic = new App();
+        // Activate Mobile View on Device Detection
+        if (navigator.userAgent.match(/iPhone/i) || (navigator.userAgent.match(/iPod/i))) {
+            // Add mobile stylesheet
+            var style = document.createElement('link');
+            style.type = 'text/css';
+            style.href = 'assets/mobile.css';
+            style.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(style);
+            periodic.smallMode = true;
+            // Activate Hydrogen for Information Page
+            periodic.loadInfoPage(1);
+        } else {
+            // Scale Page and Init Intro
+            periodic.resizePage();
+            periodic.initIntro();
         }
     }
 };
