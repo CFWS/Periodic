@@ -4,4 +4,4 @@ node_js:
       - "node"
 branches:
   only:
-    - gh-pages
+    - master

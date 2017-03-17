@@ -1,4 +1,4 @@
-#Periodic
+# Periodic
 
 [![Build Status](https://travis-ci.org/CFWS/Periodic.svg?branch=master)](https://travis-ci.org/CFWS/Periodic)
 
