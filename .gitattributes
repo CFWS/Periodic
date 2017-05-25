@@ -6,12 +6,6 @@
 *.css	text	eol=lf
 *.js	text	eol=lf
 
-# VS
-*.vbproj	-text	eol=crlf
-*.sln	-text	eol=crlf
-*.vb	-text	eol=crlf
-
 *.yml	text	eol=lf
 *.json	text	eol=lf
 *.md	text	eol=lf
-
