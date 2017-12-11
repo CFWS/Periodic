@@ -9,7 +9,7 @@ Periodic is a minimalistic Periodic Table of Elements, coded in HTML5, CSS3 and 
 
 You may contribute to this project by creating pull requests and opening new issues. 
 
-Alternatively, in the '\_build/Tools' Folder you will find Elements.exe, which you can run on a Windows computer to make edits to the database files. 
+Element information are represented by JSON files and are located in the ```'\_build/Elements'``` folder. 
 
 
 ## Features
