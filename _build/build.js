@@ -34,7 +34,7 @@ for (i = 1; i <= 118; i++) {
     // Read Element.JSON Files
     formattedfilenum = ("00" + i.toString()).slice(-3);
     path = './_build/Elements/Element_' + formattedfilenum + '.json';
-    ElementFile = fs.readFileSync(path).toString().replace(/[\uFEFF]/g, '');
+    ElementFile = fs.readFileSync(path).toString();
 
     // Parse JSON
     element = JSON.parse(ElementFile);
