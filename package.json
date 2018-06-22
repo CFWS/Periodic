@@ -4,8 +4,9 @@
   "description": "A minimalistic Periodic Table, coded in HTML5, CSS3 and Javascript.",
   "main": "build.js",
   "scripts": {
-    "build": "node _build/build.js",
-    "test": "npm run build"
+    "start": "gulp dev",
+    "build": "gulp default",
+    "test": "gulp default"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,10 @@
   "homepage": "https://github.com/CFWS/Periodic#readme",
   "devDependencies": {
     "handlebars": "^4.0.5"
+  },
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-uglify": "^3.0.0"
   }
 }

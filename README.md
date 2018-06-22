@@ -2,22 +2,18 @@
 
 [![Build Status](https://travis-ci.org/CFWS/Periodic.svg?branch=master)](https://travis-ci.org/CFWS/Periodic)
 
-Periodic is a minimalistic Periodic Table of Elements, coded in HTML5, CSS3 and Javascript. 
-
+Periodic is a minimalistic Periodic Table of Elements, coded in HTML5, CSS3 and Javascript.
 
 ## Contributing
 
-You may contribute to this project by creating pull requests and opening new issues. 
-
-Element information are represented by JSON files and are located in the ```'\_build/Elements'``` folder. 
-
+You may contribute to this project by creating pull requests and opening new issues.  
+Element information are stored in JSON files located in the ```'\_build/Elements'``` folder.
 
 ## Features
 
 - Multi-Browser Support
 - Mobile Support
 - Responsive Design
-
 
 ## Licenses
 
