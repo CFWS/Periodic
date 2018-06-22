@@ -1,7 +1,23 @@
 language: node_js
 node_js:
-      - "4.1"
       - "node"
+
+before_script:
+  - npm install
+
+script:
+  - npm run build
+
 branches:
-  only:
-    - master
+  except:
+    - gh-pages
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local-dir: dist
+  target-branch: gh-pages
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
