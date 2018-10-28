@@ -5,7 +5,8 @@ const exec = require('child_process').exec;
 
 // Element build
 gulp.task('element-build', callback => {
-    exec('mkdir -p dist && node build/build.js', function(err, stdout, stderr) {
+    exec('mkdir -p dist/assets && node build/build.js',
+            function(err, stdout, stderr) {
         if (stdout) {
             console.log(stdout);
         }

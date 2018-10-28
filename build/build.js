@@ -57,7 +57,7 @@ fs.writeFile('dist/index.html', combinedhtml.toString(), function(err) {
 
 // Save info.js
 var text = 'var elementinfo =' + JSON.stringify(ElementDataArray);
-fs.writeFile('assets/info.js', text, function(err) {
+fs.writeFile('dist/assets/info.js', text, function(err) {
     'use strict';
     if (err) {
         return console.error(err);
