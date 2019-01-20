@@ -474,16 +474,6 @@ App.prototype.initKey = function () {
     "use strict";
     var self = this;
     window.onkeydown = function (e) {
-        if (navigator.userAgent.match('Mozilla')) {
-            if (e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 ||
-                    e.keyCode === 40 || e.keyCode === 33 || e.keyCode === 34) {
-                // Arrow Keys
-                if (self.smallMode === false) {
-                    // To Allow Scrolling when Mobile or Small
-                    e.preventDefault();
-                }
-            }
-        }
         // Info Page Element Navigation
         if (self.infoPageActivated === true) {
             if (e.keyCode === 27) {
