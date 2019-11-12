@@ -1,4 +1,3 @@
-// Init
 var fs = require('fs');
 var handlebars = require('handlebars');
 
