@@ -19,7 +19,7 @@ gulp.task('element-build', callback => {
 
 // Copy images
 gulp.task('image', () => {
-    return gulp.src('img/*').pipe(gulp.dest('dist/img'));
+    return gulp.src(['img/!(TableHero.png)']).pipe(gulp.dest('dist/img'));
 });
 
 // Copy assets

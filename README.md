@@ -6,8 +6,8 @@ Periodic is a minimalistic Periodic Table of Elements, coded in HTML5, CSS3 and 
 
 ## Contributing
 
-You may contribute to this project by creating pull requests and opening new issues.  
-Element information are stored in JSON files located in the ```'\_build/Elements'``` folder.
+You may contribute to this project by creating pull requests and opening new issues.
+Element information are stored in JSON files located in the ```'build/Elements'``` folder.
 
 ## Features
 
