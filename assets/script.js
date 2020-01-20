@@ -346,29 +346,29 @@ App.prototype.loadInfoPage = function (elementNumber, animateto) {
 
     // Update Info Page Values
     var element = this.getElement(elementNumber);
-    document.getElementById('elementsym').innerHTML = element.Symbol;
+    document.getElementById('symbol-large').innerHTML = element.Symbol;
     document.getElementById('symbol').innerHTML = "Symbol: " + element.Symbol;
-    document.getElementById('elename').innerHTML = "Name: " + element.Name;
-    document.getElementById('elenumber').innerHTML = "Atomic Number: " + element.Number;
-    document.getElementById('elemass').innerHTML = "Mass: " + element.Mass;
-    document.getElementById('eleclassification').innerHTML = "Classification: " + element.Classification;
-    document.getElementById('elelocation').innerHTML = "Location: " + "Group " + element.Group + ", Period " + element.Period + ", " + element.Location;
-    document.getElementById('eleshellconfig').innerHTML = "Electron Shell Configuration: " + element.Shellconfiguration;
-    document.getElementById('elesubshellconfig').innerHTML = "Electron subshell configuration: " + element.Subshellconfiguration;
-    document.getElementById('eleionisation').innerHTML = "Ionisation energy: " + element.Ionenergy;
-    document.getElementById('elestate').innerHTML = "State at Room Temperature: " + element.Roomstate;
-    document.getElementById('eleboiling').innerHTML = "Boiling Point: " + element.Boiling;
-    document.getElementById('elemelting').innerHTML = "Melting Point: " + element.Melting;
-    document.getElementById('eleisotopes').innerHTML = "Isotopes: " + element.Isotopes;
-    document.getElementById('elediscovery').innerHTML = "Discovered: " + element.Discovered;
-    document.getElementById('elementdescription').innerHTML = "Element Description: " + element.Description;
+    document.getElementById('name').innerHTML = "Name: " + element.Name;
+    document.getElementById('number').innerHTML = "Atomic Number: " + element.Number;
+    document.getElementById('mass').innerHTML = "Mass: " + element.Mass;
+    document.getElementById('classification').innerHTML = "Classification: " + element.Classification;
+    document.getElementById('location').innerHTML = "Location: " + "Group " + element.Group + ", Period " + element.Period + ", " + element.Location;
+    document.getElementById('shellconfig').innerHTML = "Electron Shell Configuration: " + element.Shellconfiguration;
+    document.getElementById('subshellconfig').innerHTML = "Electron subshell configuration: " + element.Subshellconfiguration;
+    document.getElementById('ionisation').innerHTML = "Ionisation energy: " + element.Ionenergy;
+    document.getElementById('state').innerHTML = "State at Room Temperature: " + element.Roomstate;
+    document.getElementById('boiling').innerHTML = "Boiling Point: " + element.Boiling;
+    document.getElementById('melting').innerHTML = "Melting Point: " + element.Melting;
+    document.getElementById('isotopes').innerHTML = "Isotopes: " + element.Isotopes;
+    document.getElementById('discovery').innerHTML = "Discovered: " + element.Discovered;
+    document.getElementById('description').innerHTML = "Element Description: " + element.Description;
 
     // Undefined Group/Mass
     if (element.Group === undefined || element.Group === null) {
-        document.getElementById('elelocation').innerHTML = "Location: " + "Group " + "None" + ", Period " + element.Period + ", " + element.Location;
+        document.getElementById('location').innerHTML = "Location: " + "Group " + "None" + ", Period " + element.Period + ", " + element.Location;
     }
     if (element.Mass === undefined) {
-        document.getElementById('elemass').innerHTML = "Mass: ";
+        document.getElementById('mass').innerHTML = "Mass: ";
     }
 
     // Prev/Next

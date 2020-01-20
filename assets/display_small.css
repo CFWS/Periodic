@@ -1,7 +1,7 @@
-#eleinfo td {
+#info-table td {
   display: inline-block;
 }
-#eleinfo #sym div {
+#symbol-large {
   padding: 5px;
 }
 #pageturn td {

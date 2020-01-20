@@ -93,11 +93,14 @@ a, a:hover, a:visited {
   padding-top: 5vh;
   padding-bottom: 2vh;
 }
-#elementsym {
+#symbol-large {
   font-size: 25vmin;
   cursor: default;
   text-shadow: 3px 3px 20px #fff;
   text-align: left;
+  margin: 0 auto;
+  padding: 10vmin;
+  text-align: center;
 }
 #infocontainer p {
   padding: 0 5vw;
@@ -112,16 +115,11 @@ a, a:hover, a:visited {
   cursor: default;
   word-wrap: break-word;
 }
-#eleinfo {
+#info-table {
   padding-bottom: 2vh;
   word-wrap: break-word;
 }
-#eleinfo #sym div {
-  margin: 0 auto;
-  padding: 10vmin;
-  text-align: center;
-}
-#elementdescription {
+#description {
   margin-top: 3vh;
 }
 #references {
