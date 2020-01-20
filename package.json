@@ -24,8 +24,8 @@
   "homepage": "https://github.com/CFWS/Periodic#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-csso": "^3.0.1",
+    "gulp-csso": "^4.0.1",
     "gulp-uglify": "^3.0.2",
-    "handlebars": "^4.5.1"
+    "handlebars": "^4.7.2"
   }
 }
