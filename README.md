@@ -1,6 +1,6 @@
 # Periodic
 
-[![Build Status](https://travis-ci.org/CFWS/Periodic.svg?branch=master)](https://travis-ci.org/CFWS/Periodic)
+![Build Status](https://github.com/CFWS/Periodic/workflows/Periodic/badge.svg)
 
 Periodic is a minimalistic Periodic Table of Elements, coded in HTML5, CSS3 and Javascript.
 
