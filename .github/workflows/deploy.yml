@@ -29,7 +29,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Download artifacts
         uses: actions/download-artifact@v1
@@ -37,7 +37,19 @@ jobs:
           name: site
           path: dist
 
-      - name: Deploy to pages
-        run: ./.github/workflows/github-pages-deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
+      - name: Deploy to gh-pages
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch origin gh-pages || true
+
+          git checkout gh-pages || git checkout -b gh-pages
+          find -maxdepth 1 ! -name .git ! -name dist ! -name . -exec rm -rf {} \;
+          mv dist/* .
+          rm -r dist/
+
+          git add -A
+          git commit --allow-empty -m "${GITHUB_SHA}: run #$GITHUB_RUN_ID"
+          git push
