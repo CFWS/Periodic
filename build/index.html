@@ -35,79 +35,74 @@
       {{#each Element}}
       {{#if @first}}
       <div class="element">
-        {{else}}
-        <div class="element {{type}}">
-          {{/if}}
-          <div class="elementnumber">{{AtomicNumber}}</div>
-          <div class="elementsymbol">{{Symbol}}</div>
-          <div class="elementname">{{Name}}</div>
-          <div class="elementmass">{{Mass}}</div>
-        </div>
-        {{/each}}
+      {{else}}
+      <div class="element {{type}}">
+      {{/if}}
+        <div class="elementnumber">{{AtomicNumber}}</div>
+        <div class="elementsymbol">{{Symbol}}</div>
+        <div class="elementname">{{Name}}</div>
+        <div class="elementmass">{{Mass}}</div>
       </div>
+      {{/each}}
     </div>
+  </div>
 
-    <div id="eledes">
-      <table id="elementturn">
+  <div id="eledes">
+    <table id="elementturn">
+      <tr>
+        <td><a id="hprev">Previous Element</a></td>
+        <td><a id="hnext">Next Element</a></td>
+      </tr>
+    </table>
+    <div id="eledesinfo"></div>
+  </div>
+
+  <div id="infocontainer">
+    <div id="closewindow">X</div>
+    <div id="elementcontent">
+      <table id="pageturn">
         <tr>
-          <td><a id="hprev">Previous Element</a></td>
-          <td><a id="hnext">Next Element</a></td>
+          <td><a id="prev">Previous Element</a></td>
+          <td><a id="next">Next Element</a></td>
         </tr>
       </table>
-      <div id="eledesinfo"></div>
-    </div>
 
-    <!--Ptable Container End-->
-    <div id="infocontainer">
-      <!--Start Info Container-->
-      <div id="closewindow">X</div>
-      <!--End Top Bar-->
-      <div id="elementcontent">
-        <!--Start Element Info Content-->
-        <table id="pageturn">
-          <tr>
-            <td><a id="prev">Previous Element</a></td>
-            <td><a id="next">Next Element</a></td>
-          </tr>
-        </table>
-
-        <table id="info-table">
-          <tr>
-            <td rowspan="15"><div id="symbol-large"></div></td><td></td>
-          </tr>
-          <tr><td id="symbol"></td></tr>
-          <tr><td id="name"></td></tr>
-          <tr><td id="number"></td></tr>
-          <tr><td id="mass"></td></tr>
-          <tr><td id="classification"></td></tr>
-          <tr><td id="location"></td></tr>
-          <tr><td id="shellconfig"></td></tr>
-          <tr><td id="subshellconfig"></td></tr>
-          <tr><td id="ionisation"></td></tr>
-          <tr><td id="state"></td></tr>
-          <tr><td id="boiling"></td></tr>
-          <tr><td id="melting"></td></tr>
-          <tr><td id="isotopes"></td></tr>
-          <tr><td id="discovery"></td></tr>
-        </table>
-        <div id="weblinks">
-          <p>Additional Websites: </p>
-          <a id="webelements" target="_blank">WebElements</a>
-          <a id="jlab" target="_blank">Jefferson Lab</a>
-          <a id="photographic" target="_blank">Photographic Periodic Table</a>
-          <a id="chemicool" target="_blank">ChemiCool</a>
-          <a id="rsc" target="_blank">RSC</a>
-        </div>
-        <p id="description"></p>
-        <div id="references">
-          <p>References:</p>
-          <p>http://education.jlab.org/itselemental/ele001.html - Last Accessed 24-06-16</p>
-          <p>Heinemann Chemistry 1 Enhanced 4th Edition (Lukins, Elvins, Lohmeyer, Ross, Sanders, Wilson)</p>
-        </div>
+      <table id="info-table">
+        <tr>
+          <td rowspan="15"><div id="symbol-large"></div></td><td></td>
+        </tr>
+        <tr><td id="symbol"></td></tr>
+        <tr><td id="name"></td></tr>
+        <tr><td id="number"></td></tr>
+        <tr><td id="mass"></td></tr>
+        <tr><td id="classification"></td></tr>
+        <tr><td id="location"></td></tr>
+        <tr><td id="shellconfig"></td></tr>
+        <tr><td id="subshellconfig"></td></tr>
+        <tr><td id="ionisation"></td></tr>
+        <tr><td id="state"></td></tr>
+        <tr><td id="boiling"></td></tr>
+        <tr><td id="melting"></td></tr>
+        <tr><td id="isotopes"></td></tr>
+        <tr><td id="discovery"></td></tr>
+      </table>
+      <div id="weblinks">
+        <p>Additional Websites: </p>
+        <a id="webelements" target="_blank">WebElements</a>
+        <a id="jlab" target="_blank">Jefferson Lab</a>
+        <a id="photographic" target="_blank">Photographic Periodic Table</a>
+        <a id="chemicool" target="_blank">ChemiCool</a>
+        <a id="rsc" target="_blank">RSC</a>
       </div>
-      <!--End Element Content-->
+      <p id="description"></p>
+      <div id="references">
+        <p>References:</p>
+        <p>http://education.jlab.org/itselemental/ele001.html - Last Accessed 24-06-16</p>
+        <p>Heinemann Chemistry 1 Enhanced 4th Edition (Lukins, Elvins, Lohmeyer, Ross, Sanders, Wilson)</p>
+      </div>
     </div>
-    <script src="assets/info.js"></script>
-    <script src="assets/script.js"></script>
-  </body>
-  </html>
+  </div>
+  <script src="assets/info.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>
