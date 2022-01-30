@@ -5,8 +5,7 @@
   "main": "build.js",
   "scripts": {
     "start": "gulp dev",
-    "build": "gulp default",
-    "test": "gulp default"
+    "build": "gulp default"
   },
   "repository": {
     "type": "git",
