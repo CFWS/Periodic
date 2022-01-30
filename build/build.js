@@ -1,63 +1,57 @@
-var fs = require('fs');
-var handlebars = require('handlebars');
+const fs = require('fs');
+const handlebars = require('handlebars');
 
 // Function for returning the type of Element for use as class in stylesheet
-var ElementTypes = {
+const ElementTypes = {
     'Transition Metals': 'transitionmetal',
     'Alkali Metals': 'alkali',
     'Post Transition Metals': 'posttransition',
-    Halogens: 'halogens',
+    'Halogens': 'halogens',
     'Noble Gas': 'noblegas',
     'Non-Metal': 'nonmetals',
-    Actinides: 'actinides',
-    Lanthanides: 'lanthanides',
-    Metalloids: 'metalloids',
+    'Actinides': 'actinides',
+    'Lanthanides': 'lanthanides',
+    'Metalloids': 'metalloids',
     'Alkali Earths Metals': 'alkaliearth'
 };
 
 // Read Element Data files in Element folder and add into array
-var ElementData = [];
-var ElementDataArray = [];
-var i, element, formattedfilenum, ElementFile, Eletype;
-var path;
-for (i = 1; i <= 118; i++) {
+const ElementDataArray = [];
+for (let i = 1; i <= 118; i++) {
     // Read Element.JSON Files
-    formattedfilenum = ('00' + i.toString()).slice(-3);
-    path = './build/Elements/Element_' + formattedfilenum + '.json';
-    ElementFile = fs.readFileSync(path).toString();
+    const formattedFilePath = ('00' + i.toString()).slice(-3);
+    const path = `./build/Elements/Element_${formattedFilePath}.json`;
+    const elementFile = fs.readFileSync(path).toString();
 
     // Parse JSON
-    element = JSON.parse(ElementFile);
+    const element = JSON.parse(elementFile);
     // Add Complete Element Data to Array for Saving
     ElementDataArray.push(element);
-    // Add Partial Element Data to Array for Generation of HTML
-    Eletype = ElementTypes[element.Classification];
-    ElementData.push({
+}
+
+// Partial Element Data to Array for Generation of HTML
+const ElementData = ElementDataArray.map((element) => {
+    return {
         Symbol: element.Symbol,
         Name: element.Name,
         AtomicNumber: element['Atomic Number'],
         Mass: element.Mass,
-        type: Eletype
-    });
-}
+        type: ElementTypes[element.Classification]
+    };
+});
 
 // Use HandleBars to compile HTML using Name, Number, Mass and Classification
-var source = fs.readFileSync('./build/index.html').toString();
-var template = handlebars.compile(source);
-var combinedhtml = template({ Element: ElementData });
-
-// Save index.html
-fs.writeFile('dist/index.html', combinedhtml.toString(), function(err) {
-    'use strict';
+const sourceHTML = fs.readFileSync('./build/index.html').toString();
+const combinedHTML = handlebars.compile(sourceHTML)({ Element: ElementData });
+fs.writeFile('dist/index.html', combinedHTML.toString(), (err) => {
     if (err) {
         return console.error(err);
     }
 });
 
 // Save info.js
-var text = 'var elementinfo =' + JSON.stringify(ElementDataArray);
-fs.writeFile('dist/assets/info.js', text, function(err) {
-    'use strict';
+const text = 'var elementinfo = ' + JSON.stringify(ElementDataArray);
+fs.writeFile('dist/assets/info.js', text, (err) => {
     if (err) {
         return console.error(err);
     }
